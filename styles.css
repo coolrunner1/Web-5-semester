@@ -17,7 +17,7 @@ div {
 }
 
 .content-container{
-	min-height: 94vh;
+	min-height: 96vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -228,4 +228,92 @@ img {
 
 #but2 {
 	border-color: #e5e7eb;
+}
+
+#survey-form {
+	background-color: #3882f6;
+	border-style: solid;
+	border-color: #3882f6;
+	border-radius: 20px;
+	width: 60%;
+	height: auto;
+	padding: 25px;
+	margin: auto;
+	font-family: arial;
+	font-size: 20px;
+	font-style: bold;
+	color: rgb(249, 243, 223);
+	margin-bottom: 40px;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	gap: 50px;
+	margin: 10px;
+	text-align: center;
+}
+
+input, select, textarea {
+	display: block;
+	padding: 15px;
+	width: 60%;
+	background-color: #ffffff90;
+	border-style: solid;
+	border-radius: 10px;
+	
+	font-family: arial;
+	font-size: 15px;
+}
+
+textarea {
+	min-height: 100px;
+	height: 20vh;
+}
+
+label + button {
+	display: block;
+	padding: 15px;
+	width: 50%;
+	margin: auto;
+}
+
+.check {
+	text-align: center;
+	font-size: 15px;
+	border-radius: 5px;
+	gap: 0;
+}
+
+.radios, .checkboxes {
+	display: inline;
+	margin: auto, 10px;
+	width: auto;
+}
+
+.label-text {
+	padding: 10px;
+}
+
+#myboxes {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 40px;
+	margin-right: 28%;
+}
+
+.bottom-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.secondary-contact-text{
+	font-weight: bolder;
+	font-size: 26px;
+	color: #1f2937;
+	text-align: center;
+	padding-bottom: 50px;
 }
