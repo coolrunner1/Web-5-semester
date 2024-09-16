@@ -339,7 +339,7 @@ table, tr, th, td {
 	padding: 15px;
 	background-color: #ffffff90;
 	border-style: solid;
-	border-radius: 10px;
+	border-collapse: collapse;
 	font-family: arial;
 	font-size: 15px;
 	margin: 10px;
@@ -347,4 +347,10 @@ table, tr, th, td {
 
 .myinterests-content{
 	padding: 20px;
+	height: 100%;
+}
+
+.interests-image{
+	width: 800px;
+	height: 500px;
 }
