@@ -316,3 +316,22 @@ label + button {
 	text-align: center;
 	padding-bottom: 50px;
 }
+
+.test, #myboxes.test{
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.test > input{
+	width: 95%;
+	margin-right: 30px;
+}
+
+#dropdown, #dropdown2 {
+	width: 98%;
+	margin-right: 30px;
+}
+
+#dropdown2{
+	margin-bottom: 20px;
+}
