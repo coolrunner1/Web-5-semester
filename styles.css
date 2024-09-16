@@ -261,7 +261,6 @@ input, select, textarea {
 	background-color: #ffffff90;
 	border-style: solid;
 	border-radius: 10px;
-	
 	font-family: arial;
 	font-size: 15px;
 }
@@ -334,4 +333,14 @@ label + button {
 
 #dropdown2{
 	margin-bottom: 20px;
+}
+
+table, tr, th, td {
+	padding: 15px;
+	background-color: #ffffff90;
+	border-style: solid;
+	border-radius: 10px;
+	font-family: arial;
+	font-size: 15px;
+	margin: 10px;
 }
