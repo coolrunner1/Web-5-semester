@@ -91,7 +91,7 @@ footer {
 	padding: 1% 0;
 }
 
-.hero-header {
+.hero-header, li, lh {
 	font-weight: bolder;
 	font-size: 24px;
 }
@@ -100,6 +100,10 @@ footer {
 	font-weight: bolder;
 	font-size: 18px;
 	color: #e5e7eb;
+}
+
+p {
+	font-size: 20px;
 }
 
 .hero-secondary-but:visited {
@@ -112,7 +116,7 @@ footer {
 	text-decoration: none;
 }
 
-.hero-secondary-but:hover {
+.hero-secondary-but:hover{
 	color: #3882f6;
 	text-decoration: none;
 }
@@ -351,6 +355,26 @@ table, tr, th, td {
 }
 
 .interests-image{
-	width: 800px;
-	height: 500px;
+	width: 550px;
+	height: 350px;
+}
+
+.black-but:link {
+	color: black;
+}
+
+.black-but:visited{
+	color: #1f2937;
+}
+
+.black-but:hover {
+	color: #3882f6;
+	text-decoration: none;
+}
+
+.interest-content {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	text-align: justify;
 }
