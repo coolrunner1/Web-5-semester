@@ -5,69 +5,45 @@
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content="Me">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My landing page</title>
+        <title>Моя страница</title>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="icon" sizes="any" type="image/svg+xml" href="./images/home-2741413_960_720.png">
     </head>
-    <body>
-        <div id="header">
+    <body id="main-page">
+        <header>
             <div class="hero-header">Моя страница</div>
             <div class="small-items">
-                <div><a href="#top" class="hero-secondary-but" title="Main-page">Главная страница</a></div>
-                <div><a href="#middle" class="hero-secondary-but" title="About">Обо мне</a></div>
-                <div><a href="#quote" class="hero-secondary-but" title="Interests">Мои интересы</a></div>
-		<div><a href="#top" class="hero-secondary-but" title="Studies">Учёба</a></div>
-                <div><a href="#middle" class="hero-secondary-but" title="Gallery">Фотоальбом</a></div>
-                <div><a href="#quote" class="hero-secondary-but" title="Contacts">Контакт</a></div>
-		 <div><a href="#quote" class="hero-secondary-but" title="Test">Тест</a></div>  
-
+                <div><a href="index.html" class="hero-secondary-but" title="Main-page">Главная страница</a></div>
+                <div><a href="aboutme.html" class="hero-secondary-but" title="About">Обо мне</a></div>
+                <div><a href="myinterests.html" class="hero-secondary-but" title="Interests">Мои интересы</a></div>
+                <div><a href="studies.html" class="hero-secondary-but" title="Studies">Учёба</a></div>
+                <div><a href="gallery.html" class="hero-secondary-but" title="Gallery">Фотоальбом</a></div>
+                <div><a href="contact.html" class="hero-secondary-but" title="Contacts">Контакт</a></div>
+                <div><a href="test.html" class="hero-secondary-but" title="Test">Тест</a></div>
             </div>
-        </div>
+        </header>
         <div id="filler-top"></div>
-        <div id="top">
-            <div class="top-div">
-                <div class="hero">Меня зовут Козловцев Игорь</div>
-                <div class="hero-secondary">Я студент группы ИС/б-22-1-о</div>
-                <div class="hero-secondary">ХУЙЧЛЕН</div>
-                <!--<button>Join us</button>-->
+        <div class="content-container">
+            <div id="top">
+                <div class="top-div">
+                    <div class="hero">Меня зовут Козловцев Игорь</div>
+                    <div class="hero-secondary">Я студент группы ИС/б-22-1-о</div>
+                    <div class="hero-secondary">ЛАБОРАТОРНАЯ РАБОТА №1 - Исследование возможностей языка разметки гипертекстов HTML и каскадных таблиц стилей</div>
+                </div>
+                <img src="./images/360_F_321243084_GstfWflk1eTLlzUdRZ5mjoP5IG1iCc8J.jpg" title="Churchill" alt="Churchill" width="640" height="480">
             </div>
-            <img src="https://i.ytimg.com/vi/6cPME5TKVYU/sddefault.jpg" title="Churchill" alt="Churchill" width="640" height="480">
-        </div>
-        <div id="middle">
-            <div class="information">Gallery</div>
-            <div class="my-images">
-                <div class="img-intern">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/5eeea355389655.59822ff824b72.gif" alt="Cat" title="Cat" class="image-with-border" height="400">
-                    <div class="img-descr">Cat</div>
-                </div>
-                <div class="img-intern">
-                    <img src="https://c.tenor.com/XfLV1PmF88oAAAAC/homer-simpson-the-simpsons.gif" alt="Simpson" title="Simpson" width="400" height="400" class="image-with-border">
-                    <div class="img-descr">Simpson</div>
-                </div>
-                <div class="img-intern">
-                    <img src="https://i.gifer.com/17xj.gif" alt="rgb-cat" title="Cat RGB" width="640" height="480" class="image-with-border">
-                    <div class="img-descr">Cat RGB</div>
-                </div>
-                <div class="img-intern">
-                    <img src="https://media.idownloadblog.com/wp-content/uploads/2016/11/Animated-GIF-Banana.gif" alt="banana" title="Banana" class="image-with-border" width="640" height="480">
-                    <div class="img-descr">Banana</div>
+            <div id="container-with-box">
+                <div class="content-box">
+                    <div>
+                        <div class="hero-header">Есть предложения по улучшению сайта?</div>
+                        <div class="hero-secondary">Заполните данную форму!</div>
+                    </div>
+                    <a href="contact.html"><button id="but2">Заполнить</button></a>
                 </div>
             </div>
-        </div>
-        <div id="quote">
-            <div class="quote-text">“Ares, destroy my enemies and my life is yours.”</div>
-            <div class="quote-auth">– Kratos.</div>
-        </div>
-        <div id="container-with-box">
-            <div class="content-box">
-                <div>
-                    <div class="hero-header">Are you ready for joining us?</div>
-                    <div class="hero-secondary">You are welcome!</div>
-                </div>
-                <button id="but2">Join us</button>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="foot-text">Copyleft coolrunner1 2024</div>
+            <footer>
+                <div class="foot-text">Copyleft coolrunner1 2024</div>
+            </footer>
         </div>
     </body>
 </html>
