@@ -201,7 +201,6 @@ img {
 }
 
 .img-intern {
-	width: 100%;
 	height: auto;
 }
 
@@ -390,4 +389,5 @@ table, tr, th, td {
 	flex-direction: row;
 	gap: 20px;
 	text-align: justify;
+	justify-content: space-between;
 }
