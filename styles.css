@@ -73,7 +73,7 @@ header {
 	height: auto;
 	position: relative;
     z-index: 99;
-	padding: 95px 15%;
+	padding: 95px 10%;
 }
 
 #quote {
@@ -224,7 +224,6 @@ img {
 	background-color: #3882f6;
 	border-radius: 10px;
 	color: #e5e7eb;
-	width: 100%;
 	padding: 50px 5%;
 }
 
