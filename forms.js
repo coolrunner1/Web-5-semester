@@ -16,7 +16,6 @@ const validateElements = () => {
     const forms = document.forms["survey-form"];
     const inputs = forms.elements;
     [...inputs].forEach(input => {
-        console.log(input.tagName)
         if (input.nodeName.toLowerCase()=="input"){
             if (input.value==""){
                 setInvalid(input);
@@ -47,6 +46,57 @@ const validateName = () => {
     }
 }
 
+const validateTest = () => {
+    const question1 = document.getElementById("question1");
+    var question2 = true;
+    const question2Ch1 = document.getElementById("plane");
+    const question2Ch2 = document.getElementById("bolt");
+    const question2Ch3 = document.getElementById("vent");
+    const question2Ch4 = document.getElementById("scissors");
+    const question3 = document.getElementById("dropdown2");
+    let erroneousAnswers = "";
+    if (question1.value.toLoverCase!="спецификация"){
+        setInvalid(question1);
+        erroneousAnswers+="1";
+    }
+    if (question2Ch1.checked){
+        setInvalid(document.getElementById("plane-label"))
+        question2=false;
+    }
+    if (!question2Ch2.checked){
+        setInvalid(document.getElementById("bolt-label"));
+        console.log(document.getElementById("bolt-label"))
+        question2=false;
+    }
+    if (!question2Ch3.checked){
+        setInvalid(document.getElementById("vent-label"));
+        question2=false;
+    }
+    if (question2Ch4.checked){
+        setInvalid(document.getElementById("scissors-label"));
+        question2=false;
+    }
+    if (!question2){
+        if (erroneousAnswers!=""){
+            erroneousAnswers+=", ";
+        }
+        erroneousAnswers+="2";
+    }
+    if (question3.value!="Прямые линии"){
+        setInvalid(question3);
+        if (erroneousAnswers!=""){
+            erroneousAnswers+=", ";
+        }
+        erroneousAnswers+="3";
+    }
+    if (erroneousAnswers.length==1){
+        alert("Были допущены ошибки в задании "+erroneousAnswers);
+    }
+    else if (erroneousAnswers.length>1){
+        alert("Были допущены ошибки в заданиях "+erroneousAnswers);
+    }
+}
+
 document.getElementById("but2").onclick = () => {
     setValid();
     if (validateElements()){
@@ -56,9 +106,16 @@ document.getElementById("but2").onclick = () => {
     setTimeout(() => {
         setValid();
     }, "5000");
-      
 };
 
 document.getElementById("but3").onclick = () => {
     setValid();
+};
+
+document.getElementById("but4").onclick = () => {
+    setValid();
+    if (validateElements()){
+        validateName();
+        validateTest();
+    }
 };

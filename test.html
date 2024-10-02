@@ -26,7 +26,7 @@
         <div id="filler-top"></div>
         <div class="content-container">
           <div class="information">Тест по дисциплине "Инженерная графика"</div>
-          <form id="survey-form" action="mailto:youraddr@domain.com?subject=dsifisdf" method="GET">
+          <form id="survey-form" action="mailto:youraddr@domain.com?subject=Test" method="GET">
             <label id="name-label" for="name" class="test"><div class="label-text">Фамилия Имя Отчество</div><input id="name" type="text" placeholder="Введите своё имя" required /></label>
             <label for="dropdown" class="test">
               <div class="label-text">Группа</div>
@@ -68,18 +68,18 @@
             <label id="age-label"  for="age" class="test"><div class="label-text">Возраст</div><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
             <label id="question1-label" for="question1" class="test"><div class="label-text">Документ, определяющий состав сборочной единицы, комплекса или комплекта, называется </div><input id="question1" type="text" placeholder="Введите ответ" required /></label>
             <div id="myboxes" class="test">
-              <label class="label-text">К группе деталей относят изделие</label>
-                  <label class="check">Самолёт
-                    <input type="checkbox" value="plane" class="checkboxes"/>
+                  <label class="label-text">К группе деталей относят изделие</label>
+                  <label class="check" id="plane-label">Самолёт
+                    <input type="checkbox" id="plane" value="plane" class="checkboxes"/>
                   </label>
-                  <label class="check">Болт
-                    <input type="checkbox" value="bolt" class="checkboxes"/>
+                  <label class="check" id="bolt-label">Болт
+                    <input type="checkbox" id="bolt" value="bolt" class="checkboxes"/>
                   </label>
-                  <label class="check">Вентиль
-                    <input type="checkbox" value="vent" class="checkboxes"/>
+                  <label class="check" id="vent-label">Вентиль
+                    <input type="checkbox" id="vent" value="vent" class="checkboxes"/>
                   </label>
-                  <label class="check">Ножницы
-                    <input type="checkbox" value="scissors" class="checkboxes"/>
+                  <label class="check" id="scissors-label">Ножницы
+                    <input type="checkbox" id="scissors" value="scissors" class="checkboxes"/>
                   </label>
             </div>
             <label for="dropdown2" class="test"><div class="label-text">Из чего состоит квадрат?</div></label>
@@ -101,8 +101,9 @@
               </optgroup>
             </select>
             <div class="bottom-buttons">
+              <button id="but4" type="button">Проверить</button>
               <button id="but2" type="submit">Отправить</button>
-              <button id="but2" type="reset">Очистить</button>
+              <button id="but3" type="reset">Очистить</button>
             </div>
           </form>
             <footer>
