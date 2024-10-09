@@ -31,7 +31,8 @@ const validateNumber = () => {
     const x=input.value;
     if (!((x.startsWith("+7") || x.startsWith("+3")) && Number(x).toString().length>=9 && Number(x).toString().length<=11)) {
         setInvalid(input);
-        alert("Номер должен содержать от 9 до 11 цифр и должен начинаться с +3 или +7!");
+        input.value="";
+        input.placeholder="Номер должен содержать от 9 до 11 цифр и начинаться с +3 или +7!";
         return false;
     }
 }
@@ -41,7 +42,8 @@ const validateName = () => {
     const x=input.value;
     if (x.split(" ").length!=3) {
         setInvalid(input);
-        alert("Необходимо ввести ФИО полностью!");
+        input.value="";
+        input.placeholder="Необходимо ввести ФИО полностью!";
         return false;
     }
 }
@@ -57,6 +59,8 @@ const validateTest = () => {
     let erroneousAnswers = "";
     if (question1.value.toLoverCase!="спецификация"){
         setInvalid(question1);
+        question1.value="";
+        question1.placeholder="Неверный ответ"
         erroneousAnswers+="1";
     }
     if (question2Ch1.checked){
@@ -89,11 +93,12 @@ const validateTest = () => {
         }
         erroneousAnswers+="3";
     }
+    result=document.getElementById("result");
     if (erroneousAnswers.length==1){
-        alert("Были допущены ошибки в задании "+erroneousAnswers);
+        result.textContent="Были допущены ошибки в задании "+erroneousAnswers;
     }
     else if (erroneousAnswers.length>1){
-        alert("Были допущены ошибки в заданиях "+erroneousAnswers);
+        result.textContent="Были допущены ошибки в заданиях "+erroneousAnswers;
     }
 }
 
