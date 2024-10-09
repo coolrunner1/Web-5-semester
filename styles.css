@@ -391,3 +391,7 @@ table, tr, th, td {
 	text-align: justify;
 	justify-content: space-between;
 }
+
+.interest-reverse{
+	flex-direction: row-reverse;
+}
