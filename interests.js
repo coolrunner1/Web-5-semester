@@ -8,7 +8,7 @@ const displayInterests = (...interests) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.textContent = interests[i];
-        a.href="#int"+i-1;
+        a.href="#int"+(i-1);
         a.classList="hero-secondary-but black-but";
         li.appendChild(a);
         list.appendChild(li);
