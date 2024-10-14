@@ -48,7 +48,7 @@ const validateName = () => {
 
 const validateTest = () => {
     const question1 = document.getElementById("question1");
-    var question2 = true;
+    let question2 = true;
     const question2Ch1 = document.getElementById("plane");
     const question2Ch2 = document.getElementById("bolt");
     const question2Ch3 = document.getElementById("vent");
