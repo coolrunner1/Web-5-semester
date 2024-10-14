@@ -57,7 +57,7 @@ const validateTest = () => {
     const question2Ch4 = document.getElementById("scissors");
     const question3 = document.getElementById("dropdown2");
     let erroneousAnswers = "";
-    if (question1.value.toLoverCase!="спецификация"){
+    if (question1.value.toLowerCase()!="спецификация"){
         setInvalid(question1);
         question1.value="";
         question1.placeholder="Неверный ответ"
