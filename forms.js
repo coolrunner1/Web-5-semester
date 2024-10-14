@@ -1,7 +1,5 @@
 const setInvalid = (input) => {
-    if (!input.classList.contains("invalid-input")){
-        input.classList.add("invalid-input");
-    }
+    input.classList.toggle("invalid-input");
 }
 
 const setValid = () => {
