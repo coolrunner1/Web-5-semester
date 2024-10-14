@@ -6,6 +6,7 @@
         <meta name="author" content="Me">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Моя страница</title>
+        <script src="forms.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
         <link rel="icon" sizes="any" type="image/svg+xml" href="./images/home-2741413_960_720.png">
     </head>
@@ -29,7 +30,8 @@
           <form id="survey-form" action="mailto:youraddr@domain.com?subject=dsifisdf" method="GET">
             <label id="name-label" for="name"><div class="label-text">Фамилия Имя Отчество</div><input id="name" type="text" placeholder="Введите своё имя" required /></label>
             <label id="email-label"  for="email"><div class="label-text">Электронная почта</div><input id="email" type="email" placeholder="Введите свою почту" required /></label>
-            <label id="number-label"  for="number"><div class="label-text">Возраст</div><input id="number" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
+            <label id="number-label"  for="number"><div class="label-text">Телефон</div><input id="number" type="text" placeholder="Введите свой номер телефона" required /></label>
+            <label id="age-label"  for="age"><div class="label-text">Возраст</div><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
             <div id="myboxes">
               <label>Пол</label>
               <div>
@@ -44,7 +46,7 @@
             </label>
             <div class="bottom-buttons">
               <button id="but2" type="submit">Отправить</button>
-              <button id="but2" type="reset">Очистить</button>
+              <button id="but3" type="reset">Очистить</button>
             </div>
           </form>
             <footer>

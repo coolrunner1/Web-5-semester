@@ -73,7 +73,7 @@ header {
 	height: auto;
 	position: relative;
     z-index: 99;
-	padding: 95px 15%;
+	padding: 95px 10%;
 }
 
 #quote {
@@ -91,7 +91,7 @@ footer {
 	padding: 1% 0;
 }
 
-.hero-header {
+.hero-header, li, lh {
 	font-weight: bolder;
 	font-size: 24px;
 }
@@ -100,6 +100,10 @@ footer {
 	font-weight: bolder;
 	font-size: 18px;
 	color: #e5e7eb;
+}
+
+p {
+	font-size: 20px;
 }
 
 .hero-secondary-but:visited {
@@ -112,7 +116,7 @@ footer {
 	text-decoration: none;
 }
 
-.hero-secondary-but:hover {
+.hero-secondary-but:hover{
 	color: #3882f6;
 	text-decoration: none;
 }
@@ -197,8 +201,8 @@ img {
 }
 
 .img-intern {
-	width: 100%;
 	height: auto;
+	width: 100%;
 }
 
 .quote-text {
@@ -221,11 +225,10 @@ img {
 	background-color: #3882f6;
 	border-radius: 10px;
 	color: #e5e7eb;
-	width: 100%;
 	padding: 50px 5%;
 }
 
-#but2 {
+#but2, #but3, #but4 {
 	border-color: #e5e7eb;
 }
 
@@ -263,6 +266,15 @@ input, select, textarea {
 	border-radius: 10px;
 	font-family: arial;
 	font-size: 15px;
+}
+
+/*input:valid {
+	border-color: green;
+}*/
+
+.invalid-input {
+	border-color: red;
+	color: red;
 }
 
 textarea {
@@ -345,12 +357,45 @@ table, tr, th, td {
 	margin: 10px;
 }
 
+#myinterests {
+	background-color: #e5e7eb;
+}
+
 .myinterests-content{
 	padding: 20px;
 	height: 100%;
 }
 
 .interests-image{
-	width: 800px;
-	height: 500px;
+	width: 550px;
+	height: 350px;
+}
+
+.black-but:link {
+	color: black;
+}
+
+.black-but:visited{
+	color: #1f2937;
+}
+
+.black-but:hover {
+	color: #3882f6;
+	text-decoration: none;
+}
+
+.interest-content {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	text-align: justify;
+	justify-content: space-between;
+}
+
+.interest-reverse{
+	flex-direction: row-reverse;
+}
+
+#result{
+	text-align: center;
 }
