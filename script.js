@@ -54,7 +54,7 @@ const registerVisit = async(pageName) => {
     else{
         sessionStorage.setItem(pageName, "1");
     }
-    if (!await getCookie(pageName)) {
+    if (!getCookie(pageName)) {
         await setCookie(pageName, "1", 10);
     }
     else{
@@ -78,28 +78,20 @@ const setCookie = async (name, value, expirationDays) => {
     });
 };
 
-const getCookie = async (name) => {
-    return new Promise((resolve, reject) => {
-        try {
-            let cookieName = name + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for(let i = 0; i <ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(cookieName) == 0) {
-                    resolve("Cookie has been found successfully.");
-                    return c.substring(cookieName.length, c.length);
-                }
-            }
-            resolve("Cookie has not been found.");
-            return "";
-        } catch (error) {
-            reject(`Failed to get cookie: ${error}`);
+const getCookie = (name) => {
+    let cookieName = name + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
         }
-    });
+        if (c.indexOf(cookieName) == 0) {
+            return c.substring(cookieName.length, c.length);
+        }
+    }
+    return "";
 };
 
 
