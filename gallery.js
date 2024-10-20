@@ -7,29 +7,39 @@ const photos = [ "./images/nmuax05zxoab1.gif", "./images/xxodzo30yoab1.gif", "./
 const titles = ["C", "C++", "Rust", "C#", "Java", "Go", "Python", "Javascript", "Ruby", "Kotlin", "Swift",
     "Dart", "VBA", "Pascal", "HolyC"];
 
-const galleryElements = (columns, elements) => {
-    for (let i=0; i<elements; i+=columns){
-        const gallery = document.getElementById("middle");
-        const row = document.createElement("div");
-        row.className = "my-images";
-        gallery.appendChild(row);
-        for (let j=i; j<i+columns; j++){
-            const imageBox = document.createElement("div");
-            imageBox.className = "img-intern";
-            row.appendChild(imageBox);
-            const image = document.createElement("img");
-            image.className = "image-with-border";
-            image.src = photos[j];
-            image.title = titles[j];
-            image.alt = titles[j].toLowerCase();
-            image.onclick = () => fullscreenDisplay(image.src);
-            imageBox.appendChild(image);
-            const title = document.createElement("div");
-            title.className = "img-descr";
-            title.textContent = titles[j];
-            imageBox.appendChild(title);
+
+
+const galleryElements = async (columns, elements) => {
+    return new Promise((resolve, reject) => {
+        try {
+            for (let i=0; i<elements; i+=columns){
+                const gallery = document.getElementById("middle");
+                const row = document.createElement("div");
+                row.className = "my-images";
+                gallery.appendChild(row);
+                for (let j=i; j<i+columns; j++){
+                    const imageBox = document.createElement("div");
+                    imageBox.className = "img-intern";
+                    row.appendChild(imageBox);
+                    const image = document.createElement("img");
+                    image.className = "image-with-border";
+                    image.src = photos[j];
+                    image.title = titles[j];
+                    image.alt = titles[j].toLowerCase();
+                    image.onclick = () => fullscreenDisplay(image.src);
+                    imageBox.appendChild(image);
+                    const title = document.createElement("div");
+                    title.className = "img-descr";
+                    title.textContent = titles[j];
+                    imageBox.appendChild(title);
+                }
+            }
+            resolve("Gallery items have been added.")
+        } catch (error) {
+            reject(`Failed to add items to the gallery: ${error}`);
         }
-    }
+    });
+
 };
 
 const fullscreenImage=document.createElement('img');
@@ -44,6 +54,10 @@ const fullscreenDisplay = (image) => {
     document.body.prepend(fullscreenView);
 }
 
-galleryElements(3, titles.length);
+(async () => {
+    await galleryElements(3, titles.length);
+})();
 
-registerVisit("gallery");
+(async () => {
+    await registerVisit("gallery");
+})();

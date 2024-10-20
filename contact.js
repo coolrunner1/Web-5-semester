@@ -8,4 +8,6 @@ document.getElementById("email").onchange = () => {
     validateEmail();
 };
 
-registerVisit("contact");
+(async () => {
+    await registerVisit("contact");
+})();

@@ -7,4 +7,6 @@ document.getElementById("but4").onclick = () => {
     }
 };
 
-registerVisit("test");
+(async () => {
+    await registerVisit("test");
+})();

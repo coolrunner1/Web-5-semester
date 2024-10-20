@@ -18,4 +18,6 @@ const displayInterests = (...interests) => {
 
 displayInterests("o", "Содержимое", "Одним из моих главных хобби являются игры", "Я активно изучаю английский язык", "Книги занимают особое место в моем сердце", "Фильмы тоже играют важную роль в моей жизни");
 
-registerVisit("my-interests");
+(async () => {
+    await registerVisit("my-interests");
+})();

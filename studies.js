@@ -1,1 +1,3 @@
-registerVisit("studies");
+(async () => {
+    await registerVisit("studies");
+})();
