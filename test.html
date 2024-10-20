@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Моя страница</title>
         <script src="forms.js" defer></script>
+        <script src="test.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
         <link rel="icon" sizes="any" type="image/svg+xml" href="./images/home-2741413_960_720.png">
     </head>
@@ -27,8 +28,10 @@
         <div class="content-container">
           <div class="information">Тест по дисциплине "Инженерная графика"</div>
           <form id="survey-form" action="mailto:youraddr@domain.com?subject=Test" method="GET">
-            <label id="name-label" for="name" class="test"><div class="label-text">Фамилия Имя Отчество</div><input id="name" type="text" placeholder="Введите своё имя" required /></label>
-            <label for="dropdown" class="test">
+              <div class="input-container" id="name-container">
+                <label id="name-label" for="name" class="test"><div class="label-text">Фамилия Имя Отчество</div><input id="name" type="text" placeholder="Введите своё имя" required /></label>
+              </div>
+                  <label for="dropdown" class="test">
               <div class="label-text">Группа</div>
               <select id="dropdown">
                 <option>ИТ/б-24-1-о</option>
@@ -66,7 +69,9 @@
               </select>
             </label>
             <label id="age-label"  for="age" class="test"><div class="label-text">Возраст</div><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
-            <label id="question1-label" for="question1" class="test"><div class="label-text">Документ, определяющий состав сборочной единицы, комплекса или комплекта, называется </div><input id="question1" type="text" placeholder="Введите ответ" required /></label>
+            <div class="input-container" id="question1-container">
+                <label id="question1-label" for="question1" class="test"><div class="label-text">Документ, определяющий состав сборочной единицы, комплекса или комплекта, называется </div><input id="question1" type="text" placeholder="Введите ответ" required /></label>
+            </div>
             <div id="myboxes" class="test">
                   <label class="label-text">К группе деталей относят изделие</label>
                   <label class="check" id="plane-label">Самолёт

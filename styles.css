@@ -257,7 +257,7 @@ label {
 	text-align: center;
 }
 
-input, select, textarea {
+input, select, textarea, .error-message {
 	display: block;
 	padding: 15px;
 	width: 60%;
@@ -268,9 +268,10 @@ input, select, textarea {
 	font-size: 15px;
 }
 
-/*input:valid {
+.valid-input {
 	border-color: green;
-}*/
+	color: green;
+}
 
 .invalid-input {
 	border-color: red;
@@ -421,6 +422,14 @@ table, tr, th, td {
 	opacity: 1;
 }
 
+.input-container{
+	height: 100%;
+}
+
+.input-container:hover .overlay {
+	opacity: 1;
+}
+
 .nav-but-image{
 	height: 100px;
 	width: 200px;
@@ -478,4 +487,18 @@ table, tr, th, td {
 #test-preview{
 	width: 130px;
 	height: 100px;
+}
+
+.overlay-error{
+	background: none;
+	margin-left: 76%;
+	max-width: 250px;
+}
+
+.error-message{
+	border-color: red;
+	background-color: #e5e7eb;
+	max-width: 150px;
+	color: red;
+	opacity: 1;
 }

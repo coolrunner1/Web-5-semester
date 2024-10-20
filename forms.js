@@ -1,13 +1,70 @@
-const setInvalid = (input) => {
-    input.classList.toggle("invalid-input");
-}
+const inputTags=["name", "email", "number", "question1"];
 
-const setValid = () => {
+const validateEmailString = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
+const displayErrorMessage = (input, messageText) => {
+    const overlay = document.createElement('div');
+    overlay.id=input+"-error";
+    overlay.classList.add('overlay');
+    overlay.classList.add('overlay-error');
+    const message=document.createElement('div');
+    message.classList.add('content-box');
+    message.classList.add('error-message');
+    message.textContent = messageText;
+    overlay.appendChild(message);
+    document.getElementById(input+"-container").appendChild(overlay);
+};
+
+const removeErrorMessages = () => {
+    inputTags.forEach(input => {
+        const errorMessage=document.getElementById(input+"-error");
+        if(errorMessage){
+            errorMessage.remove();
+        }
+    })
+};
+
+const removeErrorMessage = (inputTag) => {
+    const errorMessage=document.getElementById(inputTag+"-error");
+    if(errorMessage){
+        errorMessage.remove();
+    }
+};
+
+const setInvalid = (input) => {
+    if (input.classList.contains("valid-input")){
+        input.classList.remove("valid-input");
+    }
+    if (!input.classList.contains("invalid-input")){
+        input.classList.add("invalid-input");
+    }
+};
+
+const setValid = (input) => {
+    if (input.classList.contains("invalid-input")){
+        input.classList.remove("invalid-input");
+    }
+    if (!input.classList.contains("valid-input")){
+        input.classList.add("valid-input");
+    }
+    removeErrorMessage(input.getAttribute("id"));
+};
+
+const setValidElements = () => {
     const inputs = document.getElementsByClassName("invalid-input");
     [...inputs].forEach(input => {
         input.classList.remove("invalid-input");
+        input.classList.remove("valid-input");
     });
-}
+
+    removeErrorMessages();
+};
 
 const validateElements = () => {
     let valid=true;
@@ -22,29 +79,39 @@ const validateElements = () => {
         }
     });
     return valid;
-}
+};
 
 const validateNumber = () => {
     const input = document.forms["survey-form"]["number"];
     const x=input.value;
     if (!((x.startsWith("+7") || x.startsWith("+3")) && Number(x).toString().length>=9 && Number(x).toString().length<=11)) {
         setInvalid(input);
-        input.value="";
-        input.placeholder="Номер должен содержать от 9 до 11 цифр и начинаться с +3 или +7!";
+        displayErrorMessage("number", "Номер должен содержать от 9 до 11 цифр и начинаться с +3 или +7!");
         return false;
     }
-}
+    return true;
+};
 
 const validateName = () => {
     const input = document.forms["survey-form"]["name"];
     const x=input.value;
     if (x.split(" ").length!=3) {
         setInvalid(input);
-        input.value="";
-        input.placeholder="Необходимо ввести ФИО полностью!";
+        displayErrorMessage("name", "Необходимо ввести ФИО полностью!")
         return false;
     }
-}
+    return true;
+};
+
+const validateEmail = () => {
+    const input = document.forms["survey-form"]["email"];
+    if (!validateEmailString(input.value)) {
+        setInvalid(input);
+        displayErrorMessage("email", "Необходимо ввести корректный адрес почты!")
+        return false;
+    }
+    return true;
+};
 
 const validateTest = () => {
     const question1 = document.getElementById("question1");
@@ -57,8 +124,7 @@ const validateTest = () => {
     let erroneousAnswers = "";
     if (question1.value.toLowerCase()!="спецификация"){
         setInvalid(question1);
-        question1.value="";
-        question1.placeholder="Неверный ответ"
+        displayErrorMessage("question1", "Неверный ответ");
         erroneousAnswers+="1";
     }
     if (question2Ch1.checked){
@@ -91,34 +157,32 @@ const validateTest = () => {
         }
         erroneousAnswers+="3";
     }
-    result=document.getElementById("result");
+    const result=document.getElementById("result");
     if (erroneousAnswers.length==1){
         result.textContent="Были допущены ошибки в задании "+erroneousAnswers;
     }
     else if (erroneousAnswers.length>1){
         result.textContent="Были допущены ошибки в заданиях "+erroneousAnswers;
     }
-}
+};
 
 document.getElementById("but2").onclick = () => {
-    setValid();
+    setValidElements();
     if (validateElements()){
         validateName();
         validateNumber();
+        validateEmail();
     }
-    setTimeout(() => {
-        setValid();
-    }, "5000");
+    /*setTimeout(() => {
+        setValidElements();
+    }, "15000");*/
 };
 
 document.getElementById("but3").onclick = () => {
-    setValid();
+    setValidElements();
 };
 
-document.getElementById("but4").onclick = () => {
-    setValid();
-    if (validateElements()){
-        validateName();
-        validateTest();
-    }
+document.getElementById("name").onchange = () => {
+    setValid(document.getElementById("name"));
+    validateName();
 };
