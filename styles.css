@@ -41,7 +41,7 @@ header {
 	width: 80%;
 	justify-content: space-between;
 	position: fixed;
-    z-index: 999;
+    z-index: 998;
 }
 
 #filler-top {
@@ -503,4 +503,28 @@ table, tr, th, td {
 	padding: 10px;
 	color: red;
 	opacity: 1;
+}
+
+#fullscreen-image-view{
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000A0;
+	position: fixed;
+	z-index: 999;
+	/*opacity: 0.6;*/
+	display: flex;
+}
+
+.resizable-image {
+	display: block;
+	margin: auto;
+}
+
+#fullscreen-image-view > img{
+	width: 30vw;
+	height: auto;
+}
+
+#fullscreen-image-view img{
+	object-fit: cover;
 }

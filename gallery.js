@@ -22,8 +22,7 @@ const galleryElements = (columns, elements) => {
             image.src = photos[j];
             image.title = titles[j];
             image.alt = titles[j].toLowerCase();
-            image.id = image.alt;
-            image.onclick = () => fullscreenDisplay(image);
+            image.onclick = () => fullscreenDisplay(image.src);
             imageBox.appendChild(image);
             const title = document.createElement("div");
             title.className = "img-descr";
@@ -33,8 +32,16 @@ const galleryElements = (columns, elements) => {
     }
 };
 
+const fullscreenImage=document.createElement('img');
+fullscreenImage.className = "resizable-image";
+
 const fullscreenDisplay = (image) => {
-    alert(image.src);
+    fullscreenImage.src=image;
+    const fullscreenView = document.createElement("div");
+    fullscreenView.id="fullscreen-image-view";
+    fullscreenView.onclick = () => document.getElementById("fullscreen-image-view").remove();
+    fullscreenView.appendChild(fullscreenImage);
+    document.body.prepend(fullscreenView);
 }
 
 galleryElements(3, titles.length);
