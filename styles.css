@@ -492,13 +492,14 @@ table, tr, th, td {
 .overlay-error{
 	background: none;
 	margin-left: 76%;
-	max-width: 250px;
+	max-width: 350px;
 }
 
 .error-message{
 	border-color: red;
 	background-color: #e5e7eb;
-	max-width: 150px;
+	max-width: 350px;
+	padding: 10px;
 	color: red;
 	opacity: 1;
 }
