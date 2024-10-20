@@ -45,3 +45,5 @@ const fullscreenDisplay = (image) => {
 }
 
 galleryElements(3, titles.length);
+
+registerVisit("gallery");

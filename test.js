@@ -6,3 +6,5 @@ document.getElementById("but4").onclick = () => {
         validateTest();
     }
 };
+
+registerVisit("test");

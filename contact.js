@@ -7,3 +7,5 @@ document.getElementById("email").onchange = () => {
     setValid(document.getElementById("email"));
     validateEmail();
 };
+
+registerVisit("contact");
