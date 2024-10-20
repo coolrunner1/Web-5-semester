@@ -22,6 +22,8 @@ const galleryElements = (columns, elements) => {
             image.src = photos[j];
             image.title = titles[j];
             image.alt = titles[j].toLowerCase();
+            image.id = image.alt;
+            image.onclick = () => fullscreenDisplay(image);
             imageBox.appendChild(image);
             const title = document.createElement("div");
             title.className = "img-descr";
@@ -29,6 +31,10 @@ const galleryElements = (columns, elements) => {
             imageBox.appendChild(title);
         }
     }
+};
+
+const fullscreenDisplay = (image) => {
+    alert(image.src);
 }
 
 galleryElements(3, titles.length);
