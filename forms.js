@@ -182,7 +182,7 @@ document.getElementById("but2").onclick = () => {
         validateName();
         validateNumber();
         validateEmail();
-        validateAge();
+        //validateAge();
     }
     /*setTimeout(() => {
         setValidElements();

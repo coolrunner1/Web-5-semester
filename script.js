@@ -19,7 +19,7 @@ const cookieToObject = async (cookieString) => {
         try {
             console.log(cookieString);
             if(!cookieString){
-                return {};
+                resolve({})
             }
             let cookies = cookieString.split("; ");
             let newCookies = [];
@@ -38,8 +38,7 @@ const cookieToObject = async (cookieString) => {
             cookiesJSON=cookiesJSON.substring(0, cookiesJSON.length - 2);
             cookiesJSON = "{"+cookiesJSON+"}";
             console.log(cookiesJSON);
-            resolve("Cookies have been converted to JSON successfully!");
-            return JSON.parse(cookiesJSON);
+            resolve(JSON.parse(cookiesJSON));
         } catch (error) {
             reject(`Failed to set cookie: ${error}`);
         }
