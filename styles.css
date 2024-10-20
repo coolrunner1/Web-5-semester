@@ -399,3 +399,83 @@ table, tr, th, td {
 #result{
 	text-align: center;
 }
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #1f2937;
+}
+
+.nav-but-container{
+	height: 100%;
+}
+
+.nav-but-container:hover .overlay {
+	opacity: 1;
+}
+
+.nav-but-image{
+	height: 100px;
+	width: 200px;
+}
+
+.but-interest{
+	height: 200px;
+}
+
+.interests-dropdown{
+	flex-direction: column;
+	padding: 10px;
+	gap: 5px;
+	width: 200px;
+}
+
+.interests-item-svg{
+	background-image: url("./svgs/right-arrow-svgrepo-com.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 18px;
+	width: 18px;
+}
+
+.interests-dropdown-item{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.interests-dropdown-item > a:hover{
+	color: #1f2937;
+}
+
+#aboutme-preview{
+	width: 100px;
+	height: 150px;
+}
+
+#studies-preview{
+	width: 150px;
+	height: 110px;
+}
+
+#gallery-preview{
+	width: 110px;
+	height: 120px;
+}
+
+#contact-preview{
+	width: 130px;
+	height: 100px;
+}
+
+#test-preview{
+	width: 130px;
+	height: 100px;
+}
