@@ -82,6 +82,7 @@ const appendDays = (year, month) => {
 };
 
 const getNumberOfDays = (year, month) => {
+    month++;
     return new Date(year, month, 0).getDate();
 };
 
