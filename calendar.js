@@ -4,6 +4,8 @@ const monthNames = {"Январь":0, "Февраль":1, "Март":2, "Апр�
     "Май":4, "Июнь":5, "Июль":6, "Август":7,
     "Сентябрь":8, "Октябрь":9, "Ноябрь":10, "Декабрь":11};
 
+const daysOfTheWeek = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+
 const generateYears = () => {
     let years = [];
     for (let i = 2099; i >= 1900; i--) {
@@ -105,17 +107,17 @@ const updateDateInput = (day) => {
 }
 
 const appendCalendar = () => {
+    const dateInput = document.getElementById('date');
+    daysOfTheWeek.forEach(daysOfTheWeek => {
+
+    })
 
 };
 
 document.getElementById("date").onclick = () => appendCalendar();
-
-
 
 appendYears();
 
 appendMonth();
 
 appendDays(date.getFullYear(), date.getMonth());
-
-console.log("October, 1 is "+getDayOfTheWeek(2024, 9, 1));

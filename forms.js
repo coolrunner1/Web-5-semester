@@ -71,8 +71,8 @@ const validateElements = () => {
     const forms = document.forms["survey-form"];
     const inputs = forms.elements;
     [...inputs].forEach(input => {
-        if (input.nodeName.toLowerCase()=="input"){
-            if (input.value==""){
+        if (input.nodeName.toLowerCase()==="input"){
+            if (input.value===""){
                 setInvalid(input);
                 valid=false;
             }
@@ -95,7 +95,7 @@ const validateNumber = () => {
 const validateName = () => {
     const input = document.forms["survey-form"]["name"];
     const x=input.value;
-    if (x.split(" ").length!=3) {
+    if (x.split(" ").length!==3) {
         setInvalid(input);
         displayErrorMessage("name", "Необходимо ввести ФИО полностью!")
         return false;
@@ -132,7 +132,7 @@ const validateTest = () => {
     const question2Ch4 = document.getElementById("scissors");
     const question3 = document.getElementById("dropdown2");
     let erroneousAnswers = "";
-    if (question1.value.toLowerCase()!="спецификация"){
+    if (question1.value.toLowerCase()!=="спецификация"){
         setInvalid(question1);
         displayErrorMessage("question1", "Неверный ответ");
         erroneousAnswers+="1";
@@ -155,20 +155,20 @@ const validateTest = () => {
         question2=false;
     }
     if (!question2){
-        if (erroneousAnswers!=""){
+        if (erroneousAnswers!==""){
             erroneousAnswers+=", ";
         }
         erroneousAnswers+="2";
     }
-    if (question3.value!="Прямые линии"){
+    if (question3.value!=="Прямые линии"){
         setInvalid(question3);
-        if (erroneousAnswers!=""){
+        if (erroneousAnswers!==""){
             erroneousAnswers+=", ";
         }
         erroneousAnswers+="3";
     }
     const result=document.getElementById("result");
-    if (erroneousAnswers.length==1){
+    if (erroneousAnswers.length===1){
         result.textContent="Были допущены ошибки в задании "+erroneousAnswers;
     }
     else if (erroneousAnswers.length>1){
