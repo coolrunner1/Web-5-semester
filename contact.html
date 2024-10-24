@@ -114,7 +114,10 @@
                 <label class="check"><input type="radio" class="radios" name="conditions" value="female"/> Женский</label>
               </div>
             </div>
-            <label id="date-label"  for="date"><div class="label-text">Дата рождения</div><input id="date" type="date" required readonly /></label>
+            <div class="input-container" id="date-container">
+                <label id="date-label"  for="date"><div class="label-text">Дата рождения</div><input id="date" type="date" required readonly /></label>
+                <div id="calendar-container"></div>
+            </div>
             <label id="topic-label" for="text"><div class="label-text">Тема</div><input name="subject" id="text" type="text" placeholder="Введите тему письма" required /></label>
             <label>
               <div class="label-text">Пожелания</div>
@@ -125,25 +128,6 @@
               <button id="but3" type="reset">Очистить</button>
             </div>
           </form>
-            <div id="calendar">
-                <div id="calendar-header">
-                    <select id="calendar-month">
-                    </select>
-                    <select id="calendar-year">
-                    </select>
-                </div>
-                <div id="calendar-days-container">
-                    <div class="calendar-week calendar-week-head">
-                        <div>Вс</div>
-                        <div>Пн</div>
-                        <div>Вт</div>
-                        <div>Ср</div>
-                        <div>Чт</div>
-                        <div>Пт</div>
-                        <div>Сб</div>
-                    </div>
-                </div>
-            </div>
             <footer>
                 <div class="foot-text">Copyleft coolrunner1 2024</div>
             </footer>
