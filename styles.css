@@ -540,3 +540,50 @@ table, tr, th, td {
 #history-container > div > button{
 	max-width: 400px;
 }
+
+#calendar {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	border-color: #a8c9fb;
+	background-color: #a8c9fb;
+	max-width: 350px;
+	gap: 20px
+}
+
+#calendar-header{
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	justify-content: center;
+}
+
+#calendar-header > select{
+	max-width: 150px;
+	padding: 5px;
+}
+
+#calendar-days-container{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+}
+
+.calendar-week {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: center;
+}
+
+.calendar-week > button{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+}
+
+.calendar-week-head {
+	gap: 20px;
+}
