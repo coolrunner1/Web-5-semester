@@ -582,7 +582,7 @@ table, tr, th, td {
 .calendar-week > button{
 	width: 30px;
 	height: 30px;
-	padding: 5px;
+	padding: 1px;
 }
 
 .calendar-week-header {
