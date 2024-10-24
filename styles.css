@@ -587,3 +587,8 @@ table, tr, th, td {
 .calendar-week-head {
 	gap: 20px;
 }
+
+.day-null, .day-null:hover{
+	border-color: #a8c9fb;
+	background-color: #a8c9fb;
+}
