@@ -26,7 +26,7 @@ const galleryElements = async (columns, elements) => {
                     image.src = photos[j];
                     image.title = titles[j];
                     image.alt = titles[j].toLowerCase();
-                    image.onclick = () => fullscreenDisplay(image.src);
+                    image.addEventListener("click", () => fullscreenDisplay(image.src));
                     imageBox.appendChild(image);
                     const title = document.createElement("div");
                     title.className = "img-descr";

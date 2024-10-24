@@ -26,7 +26,7 @@ const appendYears = () => {
         }
         yearsContainer.appendChild(yearOption);
     })
-    yearsContainer.onchange=()=>{appendDays(yearsContainer.value, getSelectedMonth())};
+    yearsContainer.addEventListener("change", ()=>{appendDays(yearsContainer.value, getSelectedMonth())});
 };
 
 const appendMonth= () => {
@@ -40,7 +40,7 @@ const appendMonth= () => {
         }
         monthContainer.appendChild(monthOption);
     }
-    monthContainer.onchange=()=>{appendDays(getSelectedYear(), monthContainer.value)};
+    monthContainer.addEventListener("change", ()=>{appendDays(getSelectedYear(), monthContainer.value)});
 };
 
 const clearDays = () => {
@@ -72,7 +72,7 @@ const appendDays = (year, month) => {
             } else {
                 dayButton.textContent = (++day).toString();
                 dayButton.value = day.toString();
-                dayButton.onclick = () => updateDateInput(dayButton.value);
+                dayButton.addEventListener("click", ()=>updateDateInput(dayButton.value));
             }
             weekContainer.appendChild(dayButton);
         }
@@ -107,7 +107,7 @@ const updateDateInput = (day) => {
 }
 
 const appendCalendar = () => {
-    const dateInput = document.getElementById('calendar-container');
+    const calendarContainer = document.getElementById('calendar-container');
     const calendar= document.createElement("div");
     calendar.id="calendar";
     const calendarHeader = document.createElement("div");
@@ -131,7 +131,7 @@ const appendCalendar = () => {
     });
     calendarDaysContainer.appendChild(weekDaysHeader);
     calendar.appendChild(calendarDaysContainer);
-    dateInput.appendChild(calendar);
+    calendarContainer.appendChild(calendar);
     appendYears();
     appendMonth();
     appendDays(date.getFullYear(), date.getMonth());
