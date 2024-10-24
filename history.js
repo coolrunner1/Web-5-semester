@@ -1,4 +1,13 @@
-const pageNames={"main-page":"Главная страница", "about-me":"Обо мне", "my-interests":"Мои интересы", "studies":"Учёба", "gallery":"Галерея", "contact":"Контакт", "test":"Тест", "history":"История"};
+const pageNames={
+    "main-page":"Главная страница",
+    "about-me":"Обо мне",
+    "my-interests":"Мои интересы",
+    "studies":"Учёба",
+    "gallery":"Галерея",
+    "contact":"Контакт",
+    "test":"Тест",
+    "history":"История"
+};
 
 (async () => {
     await registerVisit("history");
