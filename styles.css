@@ -545,8 +545,8 @@ table, tr, th, td {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
+	border: 2px solid #e5e7eb;
 	border-radius: 20px;
-	border-color: #a8c9fb;
 	background-color: #a8c9fb;
 	max-width: 350px;
 	gap: 20px;
@@ -599,4 +599,8 @@ table, tr, th, td {
 	display: flex;
 	flex-direction: row-reverse;
 	margin: 10px;
+}
+
+.date-input-changed{
+	color: black;
 }

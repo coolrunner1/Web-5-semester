@@ -29,9 +29,9 @@ const appendYears = () => {
     yearsContainer.addEventListener("change", ()=>{appendDays(yearsContainer.value, getSelectedMonth())});
 };
 
-const appendMonth= () => {
+const appendMonth = () => {
     const monthContainer= document.getElementById('calendar-month');
-    for (month in monthNames) {
+    for (let month in monthNames) {
         const monthOption = document.createElement("option");
         monthOption.value = monthNames[month];
         monthOption.textContent = month;
@@ -104,6 +104,9 @@ const convertDayOrMonth = (input) => {
 
 const updateDateInput = (day) => {
     const dateInput = document.getElementById('date');
+    if (!dateInput.classList.contains("date-input-changed")){
+        dateInput.classList.add("date-input-changed");
+    }
     dateInput.value = getSelectedYear()+"-"+convertDayOrMonth(getSelectedMonth()+1)+"-"+convertDayOrMonth(day);
 }
 
