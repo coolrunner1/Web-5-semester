@@ -64,6 +64,12 @@ const appendDays = (year, month) => {
         const weekContainer = document.createElement("div");
         weekContainer.classList.add("calendar-week");
         weekContainer.id="week-"+i;
+        weekContainer.addEventListener("click", event => {
+            if (event.target.className === 'day-button') {
+                updateDateInput(event.target.value);
+            }
+            event.
+        });
         for (let j=0; j<7; j++){
             const dayButton = document.createElement("button");
             dayButton.classList.add("calendar-day");
@@ -72,7 +78,8 @@ const appendDays = (year, month) => {
             } else {
                 dayButton.textContent = (++day).toString();
                 dayButton.value = day.toString();
-                dayButton.addEventListener("click", ()=>updateDateInput(dayButton.value));
+                dayButton.className="day-button";
+                //dayButton.addEventListener("click", ()=>updateDateInput(dayButton.value));
             }
             weekContainer.appendChild(dayButton);
         }
@@ -143,7 +150,7 @@ const appendCalendar = () => {
 
 const removeCalendar = () => {
     document.getElementById("calendar").remove();
-}
+};
 
 document.getElementById("date").onclick = () => {
     if (!document.getElementById("calendar")) {
