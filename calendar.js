@@ -72,6 +72,7 @@ const appendDays = (year, month) => {
         for (let j=0; j<7; j++){
             const dayButton = document.createElement("button");
             dayButton.classList.add("calendar-day");
+            dayButton.type="button";
             if ((j<startingPosition && i===0) || day===endingPosition){
                 dayButton.classList.add("day-null");
             } else {
