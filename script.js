@@ -2,18 +2,6 @@ if (screen.width < 1282){
     alert("Your screen is not supported! Website might not work as intended!")
 }
 
-/*const registerVisit = (pageName) => {
-    let visits = localStorage.getItem(pageName);
-    if (visits) {
-        localStorage.setItem(pageName, (parseInt(visits)+1).toString())
-    }
-    else{
-        localStorage.setItem(pageName, "1");
-    }
-    console.log(localStorage);
-    console.log(localStorage.getItem(pageName));
-};*/
-
 const cookieToObject = async (cookieString) => {
     return new Promise((resolve, reject) => {
         try {

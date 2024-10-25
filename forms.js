@@ -113,16 +113,6 @@ const validateEmail = () => {
     return true;
 };
 
-/*const validateAge = () => {
-    const input = document.forms["survey-form"]["age"];
-    if(parseInt(input.value) < 0 || isNaN(input.value)){
-        setInvalid(input);
-        displayErrorMessage("age", "Неверный ввод!")
-        return false;
-    }
-    return true;
-};*/
-
 const validateTest = () => {
     const question1 = document.getElementById("question1");
     let question2 = true;
@@ -182,11 +172,7 @@ document.getElementById("but2").onclick = () => {
         validateName();
         validateNumber();
         validateEmail();
-        //validateAge();
     }
-    /*setTimeout(() => {
-        setValidElements();
-    }, "15000");*/
 };
 
 document.getElementById("but3").onclick = () => {
@@ -197,8 +183,3 @@ document.getElementById("name").onchange = () => {
     setValid(document.getElementById("name"));
     validateName();
 };
-
-/*document.getElementById("age").onchange = () => {
-    setValid(document.getElementById("age"));
-    validateAge();
-};*/

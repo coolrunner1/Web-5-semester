@@ -68,7 +68,6 @@ const appendDays = (year, month) => {
             if (event.target.className === 'day-button') {
                 updateDateInput(event.target.value);
             }
-            event.
         });
         for (let j=0; j<7; j++){
             const dayButton = document.createElement("button");
@@ -79,7 +78,6 @@ const appendDays = (year, month) => {
                 dayButton.textContent = (++day).toString();
                 dayButton.value = day.toString();
                 dayButton.className="day-button";
-                //dayButton.addEventListener("click", ()=>updateDateInput(dayButton.value));
             }
             weekContainer.appendChild(dayButton);
         }
