@@ -229,11 +229,11 @@ img {
 	padding: 50px 5%;
 }
 
-#but2, #but3, #but4 {
+#but2, #but3, #but4, #yes-popup, #no-popup {
 	border-color: #e5e7eb;
 }
 
-#survey-form {
+#survey-form, .pop-up {
 	background-color: #3882f6;
 	border-style: solid;
 	border-color: #3882f6;
@@ -505,7 +505,7 @@ table, tr, th, td {
 	opacity: 1;
 }
 
-#fullscreen-image-view{
+#fullscreen-image-view, #fullscreen-overlay{
 	width: 100vw;
 	height: 100vh;
 	background-color: #000000A0;
@@ -515,6 +515,10 @@ table, tr, th, td {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+#fullscreen-overlay{
+	justify-content: center;
 }
 
 .fullscreen-view-navigation-container{
@@ -631,4 +635,20 @@ table, tr, th, td {
 
 .date-input-changed{
 	color: black;
+}
+
+.pop-up {
+	position: absolute;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	min-height: 30%;
+	justify-content: center;
+	align-items: center;
+	gap: 5vh;
+	max-width: 30%;
+}
+
+.pop-up > div > button{
+	min-width: 80px;
 }
