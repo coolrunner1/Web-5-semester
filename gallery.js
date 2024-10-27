@@ -7,31 +7,23 @@ const photos = [ "./images/nmuax05zxoab1.gif", "./images/xxodzo30yoab1.gif", "./
 const titles = ["C", "C++", "Rust", "C#", "Java", "Go", "Python", "Javascript", "Ruby", "Kotlin", "Swift",
     "Dart", "VBA", "Pascal", "HolyC"];
 
-
-
 const galleryElements = async (columns, elements) => {
     return new Promise((resolve, reject) => {
         try {
             for (let i=0; i<elements; i+=columns){
-                const gallery = document.getElementById("middle");
-                const row = document.createElement("div");
-                row.className = "my-images";
-                gallery.appendChild(row);
+                const gallery = $("#middle");
+                const row=$("<div class='my-images'></div>");
+                gallery.append(row)
                 for (let j=i; j<i+columns; j++){
-                    const imageBox = document.createElement("div");
-                    imageBox.className = "img-intern";
-                    row.appendChild(imageBox);
-                    const image = document.createElement("img");
-                    image.className = "image-with-border";
-                    image.src = photos[j];
-                    image.title = titles[j];
-                    image.alt = titles[j].toLowerCase();
-                    image.addEventListener("click", () => fullscreenDisplay(image.src));
-                    imageBox.appendChild(image);
-                    const title = document.createElement("div");
-                    title.className = "img-descr";
-                    title.textContent = titles[j];
-                    imageBox.appendChild(title);
+                    const image=$("<image class='image-with-border'></image>");
+                    image.attr("title", titles[j]);
+                    image.attr("src", photos[j]);
+                    image.attr("alt", titles[j].toLowerCase())
+                    image.on("click", () => fullscreenDisplay(image.attr("src").toString()));
+                    const imageIntern = $("<div class='img-intern'></div>")
+                    imageIntern.append(image);
+                    imageIntern.append("<div class='img-descr'>"+titles[j]+"</div>");
+                    row.append(imageIntern);
                 }
             }
             resolve("Gallery items have been added.")
@@ -42,10 +34,13 @@ const galleryElements = async (columns, elements) => {
 
 };
 
+/**/
 const fullscreenImage=document.createElement('img');
 fullscreenImage.className = "resizable-image";
 
+/**/
 const fullscreenDisplay = (image) => {
+    console.log("fullscreenDisplay is deprecated");
     fullscreenImage.src=image;
     const fullscreenView = document.createElement("div");
     fullscreenView.id="fullscreen-image-view";

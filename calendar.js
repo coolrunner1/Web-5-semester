@@ -4,8 +4,6 @@ const monthNames = {"Январь":0, "Февраль":1, "Март":2, "Апр�
     "Май":4, "Июнь":5, "Июль":6, "Август":7,
     "Сентябрь":8, "Октябрь":9, "Ноябрь":10, "Декабрь":11};
 
-const daysOfTheWeek = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
-
 const generateYears = () => {
     let years = [];
     for (let i = 2099; i >= 1900; i--) {
@@ -16,73 +14,63 @@ const generateYears = () => {
 
 const appendYears = () => {
     let years = generateYears();
-    const yearsContainer= document.getElementById('calendar-year');
+    const yearsContainer= $('#calendar-year');
     years.forEach(year => {
-        const yearOption = document.createElement("option");
-        yearOption.value = year;
-        yearOption.textContent = year;
+        const yearOption = $("<option value='"+year+"'>"+year+"</option>");
         if (year===date.getFullYear()){
-            yearOption.selected = true;
+            yearOption.attr('selected','selected');
         }
-        yearsContainer.appendChild(yearOption);
+        yearsContainer.append(yearOption);
     })
-    yearsContainer.addEventListener("change", ()=>{appendDays(yearsContainer.value, getSelectedMonth())});
+    yearsContainer.on("change", ()=>{appendDays(yearsContainer.val().toString(), getSelectedMonth())});
 };
 
 const appendMonth = () => {
-    const monthContainer= document.getElementById('calendar-month');
+    const monthContainer= $('#calendar-month');
     for (let month in monthNames) {
-        const monthOption = document.createElement("option");
-        monthOption.value = monthNames[month];
-        monthOption.textContent = month;
+        const monthOption = $("<option value='"+month+"'>"+month+"</option>");
         if (monthNames[month]===date.getMonth()){
-            monthOption.selected = true;
+            monthOption.attr('selected','selected');
         }
-        monthContainer.appendChild(monthOption);
+        monthContainer.append(monthOption);
     }
-    monthContainer.addEventListener("change", ()=>{appendDays(getSelectedYear(), monthContainer.value)});
+    monthContainer.on("change", ()=>{appendDays(getSelectedYear(), monthNames[monthContainer.val().toString()])});
 };
 
 const clearDays = () => {
-    const daysContainer = document.getElementById('calendar-days-container');
-    if (!document.getElementById("week-0")){
+    const daysContainer = $('#calendar-days-container');
+    if (!$("#week-0").length){
         return;
     }
     for (let i = 0; i < 6; i++) {
-        const weekContainer = document.getElementById('week-'+i);
-        daysContainer.removeChild(weekContainer);
+        daysContainer.children('#week-'+i).remove();
     }
 }
 
 const appendDays = (year, month) => {
     clearDays();
-    const daysContainer = document.getElementById('calendar-days-container');
+    console.log(year, month)
+    const daysContainer = $('#calendar-days-container');
     const startingPosition = getDayOfTheWeek(year, month, 1);
     const endingPosition = getNumberOfDays(year, month);
     let day = 0;
     for (let i = 0; i<6; i++){
-        const weekContainer = document.createElement("div");
-        weekContainer.classList.add("calendar-week");
-        weekContainer.id="week-"+i;
-        weekContainer.addEventListener("click", event => {
-            if (event.target.className === 'day-button') {
-                updateDateInput(event.target.value);
-            }
+        const weekContainer = $("<div class='calendar-week' id='week-"+i+"'></div>");
+        weekContainer.on("click", ".day-button", function() {
+            updateDateInput($(this).val().toString());
         });
         for (let j=0; j<7; j++){
-            const dayButton = document.createElement("button");
-            dayButton.classList.add("calendar-day");
-            dayButton.type="button";
+            const dayButton = $("<button class='calendar-day' type='button'></button>");
             if ((j<startingPosition && i===0) || day===endingPosition){
-                dayButton.classList.add("day-null");
+                dayButton.addClass("day-null");
             } else {
-                dayButton.textContent = (++day).toString();
-                dayButton.value = day.toString();
-                dayButton.className="day-button";
+                dayButton.text((++day).toString());
+                dayButton.val(day.toString());
+                dayButton.addClass("day-button");
             }
-            weekContainer.appendChild(dayButton);
+            weekContainer.append(dayButton);
         }
-        daysContainer.appendChild(weekContainer);
+        daysContainer.append(weekContainer);
     }
     getNumberOfDays(year, month);
 };
@@ -97,11 +85,11 @@ const getDayOfTheWeek = (year, month,  day) => {
 };
 
 const getSelectedYear = () => {
-    return parseInt(document.getElementById('calendar-year').value);
+    return parseInt($('#calendar-year').val().toString());
 };
 
 const getSelectedMonth = () => {
-    return parseInt(document.getElementById('calendar-month').value);
+    return monthNames[$('#calendar-month').val().toString()];
 }
 
 const convertDayOrMonth = (input) => {
@@ -109,52 +97,33 @@ const convertDayOrMonth = (input) => {
 }
 
 const updateDateInput = (day) => {
-    const dateInput = document.getElementById('date');
-    if (!dateInput.classList.contains("date-input-changed")){
-        dateInput.classList.add("date-input-changed");
+    const dateInput = $('#date');
+    if (!dateInput.hasClass("date-input-changed")){
+        dateInput.addClass("date-input-changed");
     }
-    dateInput.value = getSelectedYear()+"-"+convertDayOrMonth(getSelectedMonth()+1)+"-"+convertDayOrMonth(day);
+    dateInput.val(getSelectedYear()+"-"+convertDayOrMonth(getSelectedMonth()+1)+"-"+convertDayOrMonth(day));
 }
 
 const appendCalendar = () => {
-    const calendarContainer = document.getElementById('calendar-container');
-    const calendar= document.createElement("div");
-    calendar.id="calendar";
-    const calendarHeader = document.createElement("div");
-    calendarHeader.id = "calendar-header";
-    const monthSelect = document.createElement("select");
-    monthSelect.id = "calendar-month";
-    calendarHeader.appendChild(monthSelect);
-    const yearSelect = document.createElement("select");
-    yearSelect.id = "calendar-year";
-    calendarHeader.appendChild(yearSelect);
-    calendar.appendChild(calendarHeader);
-    const calendarDaysContainer = document.createElement("div");
-    calendarDaysContainer.id = "calendar-days-container";
-    const weekDaysHeader = document.createElement("div");
-    weekDaysHeader.classList.add("calendar-week");
-    weekDaysHeader.classList.add("calendar-week-header");
-    daysOfTheWeek.forEach(daysOfTheWeek => {
-        const weekElement = document.createElement("div");
-        weekElement.textContent = daysOfTheWeek.toString();
-        weekDaysHeader.appendChild(weekElement);
-    });
-    calendarDaysContainer.appendChild(weekDaysHeader);
-    calendar.appendChild(calendarDaysContainer);
-    calendarContainer.appendChild(calendar);
+    const calendarContainer = $('#calendar-container');
+    const calendar = $("<div id='calendar'><div id='calendar-header'><select id='calendar-month'></select>" +
+        "<select id='calendar-year'></select></div>" +
+        "<div id='calendar-days-container'><div class='calendar-week calendar-week-header'>" +
+        "<div>Вс</div><div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div></div></div></div>");
+    calendarContainer.append(calendar);
     appendYears();
     appendMonth();
     appendDays(date.getFullYear(), date.getMonth());
 };
 
 const removeCalendar = () => {
-    document.getElementById("calendar").remove();
+    $("#calendar").remove();
 };
 
-document.getElementById("date").onclick = () => {
-    if (!document.getElementById("calendar")) {
+$("#date").on("click", () => {
+    if (!$("#calendar").length) {
         appendCalendar();
     } else {
         removeCalendar();
     }
-};
+});

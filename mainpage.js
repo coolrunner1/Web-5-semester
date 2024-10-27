@@ -1,6 +1,4 @@
-document.getElementById("but2").onclick = () => {
-    location.href = "contact.html";
-};
+$("#but2").on("click",() => {location.href = "contact.html";});
 
 
 (async () => {

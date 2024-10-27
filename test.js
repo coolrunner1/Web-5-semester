@@ -1,10 +1,10 @@
-document.getElementById("but4").onclick = () => {
+$("#but4").on("click",() => {
     setValidElements();
     if (validateElements()){
         validateName();
         validateTest();
     }
-};
+});
 
 (async () => {
     await registerVisit("test");

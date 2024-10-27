@@ -1,20 +1,10 @@
 const displayInterests = (...interests) => {
-    const container = document.getElementById('interests-container');
-    const list = document.createElement(interests[0]+'l');
-    const lh = document.createElement("lh");
-    lh.textContent=interests[1];
-    list.appendChild(lh);
-    for(let i=2; i<interests.length; i++) {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.textContent = interests[i];
-        a.href="#int"+(i-1);
-        a.classList="hero-secondary-but black-but";
-        li.appendChild(a);
-        list.appendChild(li);
+    const interestsContainer = $("#interests-container");
+    interestsContainer.html("<"+interests[0]+"l><lh>"+interests[1]+"</lh></"+interests[0]+"l>");
+    for (let i = 2; i < interests.length; i++) {
+        interestsContainer.children().append("<li><a href='#int"+(i-1)+"' class='hero-secondary-but black-but'>"+interests[i]+"</a></li>");
     }
-    container.appendChild(list);
-}
+};
 
 displayInterests(
     "o",

@@ -5,7 +5,7 @@ if (screen.width < 1282){
 const cookieToObject = async (cookieString) => {
     return new Promise((resolve, reject) => {
         try {
-            console.log(cookieString);
+            //console.log(cookieString);
             if(!cookieString){
                 resolve({})
             }
@@ -25,7 +25,7 @@ const cookieToObject = async (cookieString) => {
             })
             cookiesJSON=cookiesJSON.substring(0, cookiesJSON.length - 2);
             cookiesJSON = "{"+cookiesJSON+"}";
-            console.log(cookiesJSON);
+            //console.log(cookiesJSON);
             resolve(JSON.parse(cookiesJSON));
         } catch (error) {
             reject(`Failed to set cookie: ${error}`);
@@ -47,9 +47,9 @@ const registerVisit = async(pageName) => {
     else{
         await updateCookieCount(pageName);
     }
-    console.log(sessionStorage);
+    /*console.log(sessionStorage);
     console.log(sessionStorage.getItem(pageName));
-    console.log(getCookie(pageName));
+    console.log(getCookie(pageName));*/
 };
 
 const setCookie = async (name, value, expirationDays) => {
@@ -88,13 +88,11 @@ const updateCookieCount = async (name) => {
     await setCookie(name, cookieObject[name], 10);
 };
 
-const clockElement = document.createElement("div");
-clockElement.id = "clock";
-document.querySelector("footer").prepend(clockElement);
+$("footer").prepend("<div id='clock'>penis</div>")
 
 const setTime = async() => {
     const date = new Date();
-    clockElement.textContent = date.toLocaleString("ru-RU");
+    $("#clock").text(date.toLocaleString("ru-RU"));
     setTimeout(await setTime, 1000);
 }
 

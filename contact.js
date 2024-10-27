@@ -1,12 +1,12 @@
-document.getElementById("number").onchange = () => {
-    setValid(document.getElementById("number"));
+$("#number").on("change", () => {
+    setValid($("#number"));
     validateNumber();
-};
+});
 
-document.getElementById("email").onchange = () => {
-    setValid(document.getElementById("email"));
+$("#email").on("change", () => {
+    setValid($("#email"));
     validateEmail();
-};
+});
 
 (async () => {
     await registerVisit("contact");

@@ -14,71 +14,45 @@ const pageNames={
 })();
 
 const sessionStorageToTable = async () => {
-    const table = document.createElement("table");
-    const th1 = document.createElement("th");
-    const th2 = document.createElement("th");
-    th1.textContent="Страница";
-    th2.textContent="Количество посещений";
-    table.appendChild(th1);
-    table.appendChild(th2);
-    table.id="session-table";
+    const table = $("<table id='session-table'><th>Страница</th><th>Количество посещений</th></table>");
     for (const pageName in pageNames) {
         if (sessionStorage.getItem(pageName)) {
-            const tr = document.createElement("tr");
-            const td1 = document.createElement("td");
-            const td2 = document.createElement("td");
-            td1.textContent=pageNames[pageName];
-            td2.textContent=sessionStorage.getItem(pageName);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            table.appendChild(tr);
-            console.log(pageName + " " + pageNames[pageName] + " " + sessionStorage.getItem(pageName));
+            const tr = $("<tr><td>"+pageNames[pageName]+"</td><td>"+sessionStorage.getItem(pageName)+"</td></tr>")
+            table.append(tr);
+            //console.log(pageName + " " + pageNames[pageName] + " " + sessionStorage.getItem(pageName));
         }
     }
-    const storage = document.getElementById("session-table");
-    if (storage) {
-        document.getElementById("session-table").remove();
+    const storage = $("#session-table");
+    if (storage.length) {
+        storage.remove();
     }
-    document.getElementById("session-storage-stats").appendChild(table);
+    $("#session-storage-stats").append(table);
 }
 
 const cookieToTable = async () => {
-    const table = document.createElement("table");
-    const th1 = document.createElement("th");
-    const th2 = document.createElement("th");
-    th1.textContent="Страница";
-    th2.textContent="Количество посещений";
-    table.appendChild(th1);
-    table.appendChild(th2);
-    table.id="cookies-table"
+    const table = $("<table id='cookies-table'><th>Страница</th><th>Количество посещений</th></table>");
     const cookiesObject = await cookieToObject(document.cookie.toString());
-    console.log("cookies object", cookiesObject);
+    //console.log("cookies object", cookiesObject);
     for (const pageName in pageNames) {
         if (cookiesObject.hasOwnProperty(pageName)) {
-            const tr = document.createElement("tr");
-            const td1 = document.createElement("td");
-            const td2 = document.createElement("td");
-            td1.textContent=pageNames[pageName];
-            td2.textContent=cookiesObject[pageName];
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            table.appendChild(tr);
-            console.log(pageName + " " + pageNames[pageName] + " " + sessionStorage.getItem(pageName));
+            const tr = $("<tr><td>"+pageNames[pageName]+"</td><td>"+cookiesObject[pageName]+"</td></tr>")
+            table.append(tr);
+            //console.log(pageName + " " + pageNames[pageName] + " " + sessionStorage.getItem(pageName));
         }
     }
-    const storage = document.getElementById("cookies-table");
-    if (storage) {
-        document.getElementById("cookies-table").remove();
+    const storage = $("#cookies-table");
+    if (storage.length) {
+        storage.remove();
     }
-    document.getElementById("cookie-storage-stats").appendChild(table);
+    $("#cookie-storage-stats").append(table);
 
 }
 
 
-document.getElementById("get-session-storage-stats").onclick = async event => {
+$("#get-session-storage-stats").on("click", async event => {
     await sessionStorageToTable();
-}
+});
 
-document.getElementById("get-cookie-storage-stats").onclick = async event => {
+$("#get-cookie-storage-stats").on("click", async event => {
     await cookieToTable();
-}
+});
