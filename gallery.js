@@ -34,19 +34,37 @@ const galleryElements = async (columns, elements) => {
 
 };
 
-/**/
-const fullscreenImage=document.createElement('img');
-fullscreenImage.className = "resizable-image";
-
-/**/
 const fullscreenDisplay = (image) => {
-    console.log("fullscreenDisplay is deprecated");
-    fullscreenImage.src=image;
-    const fullscreenView = document.createElement("div");
-    fullscreenView.id="fullscreen-image-view";
-    fullscreenView.onclick = () => document.getElementById("fullscreen-image-view").remove();
-    fullscreenView.appendChild(fullscreenImage);
-    document.body.prepend(fullscreenView);
+    let currentImage = photos.indexOf(image);
+    const numberOfImages = photos.length;
+    const fullscreenImage=$('<img class="resizable-image" alt="'+titles[currentImage].toLowerCase()+'" title="'+titles[currentImage]+'">');
+    fullscreenImage.attr("src", image);
+    const fullscreenView = $("<div id='fullscreen-image-view'></div>");
+    fullscreenView.on("click", () => fullscreenView.remove());
+    fullscreenView.append(fullscreenImage);
+    const backButton = $("<button>Назад</button>");
+    backButton.on("click", () => {
+        fullscreenView.remove();
+        if(currentImage-1<0){
+            currentImage=numberOfImages;
+        }
+        fullscreenDisplay(photos[currentImage-1]);
+    });
+    const forwardButton = $("<button>Вперёд</button>");
+    forwardButton.on("click", () => {
+        fullscreenView.remove();
+        if(currentImage+1>=numberOfImages){
+            currentImage=-1;
+        }
+        fullscreenDisplay(photos[currentImage+1]);
+    });
+    const navStatus = $("<div id='fullscreen-nav-status' class='hero-secondary'>Фото "+(currentImage+1)+" из "+numberOfImages+"</div>");
+    const navigationContainer = $("<div class='fullscreen-view-navigation-container'></div>")
+    navigationContainer.append(backButton);
+    navigationContainer.append(navStatus);
+    navigationContainer.append(forwardButton);
+    fullscreenView.append(navigationContainer);
+    $("body").prepend(fullscreenView);
 }
 
 (async () => {
