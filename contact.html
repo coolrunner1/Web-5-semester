@@ -107,8 +107,10 @@
               <div class="input-container" id="number-container">
                 <label id="number-label"  for="number"><div class="label-text">Телефон</div><input id="number" type="text" placeholder="Введите свой номер телефона" required /></label>
               </div>
-              <label id="age-label"  for="age"><div class="label-text">Возраст</div><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
-            <div id="myboxes">
+              <div class="input-container" id="age-container">
+                <label id="age-label"  for="age"><div class="label-text">Возраст</div><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
+              </div>
+             <div id="myboxes">
               <label>Пол</label>
               <div>
                 <label class="check"><input type="radio" name="conditions"  class="radios" value="male"/> Мужской</label>
@@ -119,7 +121,9 @@
                 <label id="date-label"  for="date"><div class="label-text">Дата рождения</div><input id="date" type="date" required readonly /></label>
                 <div id="calendar-container"></div>
             </div>
-            <label id="topic-label" for="text"><div class="label-text">Тема</div><input name="subject" id="text" type="text" placeholder="Введите тему письма" required /></label>
+            <div class="input-container" id="text-container">
+                <label id="topic-label" for="text"><div class="label-text">Тема</div><input name="subject" id="text" type="text" placeholder="Введите тему письма" required /></label>
+            </div>
             <label>
               <div class="label-text">Пожелания</div>
               <textarea name="body"></textarea>

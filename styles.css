@@ -255,10 +255,11 @@ label {
 	justify-content: right;
 	gap: 50px;
 	margin: 10px;
+	margin-bottom: 0;
 	text-align: center;
 }
 
-input, select, textarea, .error-message {
+input, select, textarea, .error-message, .pop-up-tip {
 	display: block;
 	padding: 15px;
 	width: 60%;
@@ -425,6 +426,7 @@ table, tr, th, td {
 
 .input-container{
 	height: 100%;
+	margin-bottom: 30px;
 }
 
 .input-container:hover .overlay {
@@ -661,4 +663,19 @@ table, tr, th, td {
 
 .input-container-test{
 	margin-right: 3vw;
+	margin-bottom: auto;
+}
+
+.pop-up-tip{
+	color: black;
+	font-weight: bold;
+	border-color: #ffffff;
+	margin-left: 22vw;
+	max-width: 35vw;
+	margin-right: 30px;
+	position: absolute;
+	z-index: 1000;
+	margin-top: 0;
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
