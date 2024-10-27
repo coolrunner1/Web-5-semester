@@ -511,6 +511,7 @@ table, tr, th, td {
 	background-color: #000000A0;
 	position: fixed;
 	z-index: 999;
+	backdrop-filter: blur(5px);
 	/*opacity: 0.6;*/
 	display: flex;
 	flex-direction: column;
