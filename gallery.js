@@ -15,10 +15,7 @@ const galleryElements = async (columns, elements) => {
                 const row=$("<div class='my-images'></div>");
                 gallery.append(row)
                 for (let j=i; j<i+columns; j++){
-                    const image=$("<image class='image-with-border'></image>");
-                    image.attr("title", titles[j]);
-                    image.attr("src", photos[j]);
-                    image.attr("alt", titles[j].toLowerCase())
+                    const image=$("<img class='image-with-border' title='"+titles[j]+"' src='"+photos[j]+"' alt='"+titles[j].toLowerCase()+"'>");
                     image.on("click", () => fullscreenDisplay(image.attr("src").toString()));
                     const imageIntern = $("<div class='img-intern'></div>")
                     imageIntern.append(image);
