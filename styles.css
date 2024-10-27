@@ -501,6 +501,7 @@ table, tr, th, td {
 	background-color: #e5e7eb;
 	max-width: 350px;
 	padding: 10px;
+	margin-left: 14vw;
 	color: red;
 	opacity: 1;
 }
@@ -652,4 +653,12 @@ table, tr, th, td {
 
 .pop-up > div > button{
 	min-width: 80px;
+}
+
+.input-container-test > input{
+	width: 100%;
+}
+
+.input-container-test{
+	margin-right: 3vw;
 }

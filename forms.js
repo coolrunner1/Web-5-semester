@@ -8,36 +8,22 @@ const validateEmailString = (email) => {
         );
 };
 
-/**/
 const displayErrorMessage = (input, messageText) => {
-    console.log("displayErrorMessage is deprecated and will be replaced in future commits");
-    const overlay = document.createElement('div');
-    overlay.id=input+"-error";
-    overlay.classList.add('overlay');
-    overlay.classList.add('overlay-error');
-    const message=document.createElement('div');
-    message.classList.add('content-box');
-    message.classList.add('error-message');
-    message.textContent = messageText;
-    overlay.appendChild(message);
-    document.getElementById(input+"-container").appendChild(overlay);
+    const overlay = $('<div id="'+input+'-error" class="overlay overlay-error">' +
+        '<div class="content-box error-message">'+messageText+'</div></div>');
+    $("#"+input+"-container").append(overlay);
 };
 
-/**/
 const removeErrorMessages = () => {
-    console.log("removeErrorMessages is deprecated and will be replaced in future commits");
     inputTags.forEach(input => {
-        const errorMessage=document.getElementById(input+"-error");
-        if(errorMessage){
+        const errorMessage=$("#"+input+"-error");
+        if(errorMessage.length){
             errorMessage.remove();
         }
     })
 };
 
-
-/**/
 const removeErrorMessage = (inputTag) => {
-    console.log("removeErrorMessage is deprecated and will be replaced in future commits");
     const errorMessage=$("#"+inputTag+"-error");
     if(errorMessage){
         errorMessage.remove();
@@ -172,7 +158,9 @@ const validateTest = () => {
 };
 
 $("#but3").on( "click", () => {
-    $("body").prepend("<div id='fullscreen-overlay'><div class='pop-up'>Вы точно уверены, что хотите стереть все данные?<div class='bottom-buttons'><button id='yes-popup'>Да</button><button id='no-popup'>Нет</button></div></div></div>");
+    $("body").prepend("<div id='fullscreen-overlay'>" +
+        "<div class='pop-up'>Вы точно уверены, что хотите стереть все данные?" +
+        "<div class='bottom-buttons'><button id='yes-popup'>Да</button><button id='no-popup'>Нет</button></div></div></div>");
     $("#yes-popup").on("click", () => {
         $("#fullscreen-overlay").remove();
         $("#survey-form").trigger("reset");
