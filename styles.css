@@ -120,6 +120,7 @@ p {
 .hero-secondary-but:hover{
 	color: #3882f6;
 	text-decoration: none;
+	transition: .5s ease;
 }
 
 button:hover {
