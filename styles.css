@@ -259,6 +259,14 @@ label {
 	text-align: center;
 }
 
+#text-container + label {
+	margin-bottom: 20px;
+}
+
+#myboxes {
+	margin-bottom: 40px;
+}
+
 input, select, textarea, .error-message, .pop-up-tip {
 	display: block;
 	padding: 15px;
