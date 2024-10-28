@@ -1,11 +1,30 @@
 const tips = {"name":"Пример: Иванов Иван Иванович", "email":"Пример: example@example.com",
     "number":"Пример: +7777777777", "age":"Положительное число от 1 до 150", "text":"Пример: Советы по поводу улучшения сайта"};
 
+$.fn.isInViewport = function () {
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
+
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+
+    console.log(viewportTop, viewportBottom);
+    console.log(elementTop, elementBottom);
+
+    return elementBottom > viewportTop && elementBottom < viewportBottom;
+};
+
 const addTip = (input, textContent) => {
     if ($("#"+input+"-tip").length){
         return;
     }
-    $("#"+input+"-container").append("<div class='pop-up-tip' id='"+input+"-tip'> "+textContent+" </div>")
+    const container = $("#"+input+"-container");
+    const content = $("<div class='pop-up-tip' id='"+input+"-tip'> "+textContent+" </div>");
+    container.append(content);
+    if (!$("#"+input+"-tip").isInViewport()){
+        $("#"+input+"-tip").remove();
+        container.prepend(content);
+    }
     setTimeout(() => {
         $("#"+input+"-tip").remove();
     }, 3000);
@@ -49,3 +68,5 @@ $("#but2").on("click", () => {
 (async () => {
     await registerVisit("contact");
 })();
+
+$(".input-container").prepend("<div class='input-filler-top'></div>")

@@ -263,10 +263,6 @@ label {
 	margin-bottom: 20px;
 }
 
-#myboxes {
-	margin-bottom: 40px;
-}
-
 input, select, textarea, .error-message, .pop-up-tip {
 	display: block;
 	padding: 15px;
@@ -323,6 +319,7 @@ label + button {
 	justify-content: center;
 	gap: 40px;
 	margin-right: 28%;
+	margin-top: 20px;
 }
 
 .bottom-buttons {
@@ -434,7 +431,11 @@ table, tr, th, td {
 
 .input-container{
 	height: 100%;
-	margin-bottom: 30px;
+
+}
+
+.input-container > label {
+	margin-top: 0;
 }
 
 .input-container:hover .overlay {
@@ -686,4 +687,9 @@ table, tr, th, td {
 	margin-top: 0;
 	padding-top: 1px;
 	padding-bottom: 1px;
+	border-width: 2px;
+}
+
+.input-filler-top{
+	padding: 15px 0;
 }
