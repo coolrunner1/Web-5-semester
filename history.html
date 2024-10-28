@@ -8,11 +8,11 @@
         <title>Моя страница</title>
         <script src="jquery-3.7.1.min.js"></script>
         <script src="script.js" defer></script>
-        <script src="aboutme.js" defer></script>
+        <script src="history.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
         <link rel="icon" sizes="any" type="image/svg+xml" href="./images/home-2741413_960_720.png">
     </head>
-    <body>
+    <body id="contact">
         <header>
             <div class="hero-header">Моя страница</div>
             <div class="small-items">
@@ -92,12 +92,19 @@
             </div>
         </header>
         <div id="filler-top"></div>
-        <div id="quote">
-            <div class="quote-text">“Я, Чикнаев Василий Эдуардович, родился 21 декабря 1959 года в Российской Федерации, в г. Новосибирске. В 1967 году я пошел в среднюю школу № 2 г. Кишинева, которую окончил в 1977 году. В 1977 году я поступил в Одесский Политехнический институт, который закончил в 1982 году по специальности инженер – теплоэнергетик. В 1982 году началась моя трудовая биография. В настоящее время я работаю Директором предприятия "Cicnaev Eugen" в г. Кишиневе. В настоящее время проживаю по адресу: Республика Молдова, г. Кишинев, ул Индепенденций, 18. Женат. Жена – Чикнаева Людмила Андреевна, 1965 года рождения, русская, образование – высшее, работает, проживает со мной. Сын – Михаил, 1997 года рождения, проживает со мной. Мать – Чикнаева (Антоненкова) Ольга Ивановна, 1935 года рождения, болгарка, образование высшее, пенсионер, проживает по адресу: Республика Молдова г.Кишинев, ул. Роз, 123. Отец – Чикнаев Эдуард Федорович, 1935 года рождения, русский, образование высшее, пенсионер, проживает по адресу: Республика Молдова г.Кишинев, ул. Роз, 123. Я не судим, беспартийный, православный христианин. г. Кишинев 30.12.2009 г.”</div>
-            <div class="quote-auth">– Автобиография</div>
+        <div class="content-container">
+          <div class="information">История посещений</div>
+            <div id="history-container">
+                <div id="session-storage-stats">
+                    <button id="get-session-storage-stats">Получить сведения о посещённых страницах за эту сессию</button>
+                </div>
+                <div id="cookie-storage-stats">
+                    <button id="get-cookie-storage-stats">Получить сведения о посещённых страницах за всё время</button>
+                </div>
+            </div>
+            <footer>
+                <div class="foot-text">Copyleft coolrunner1 2024</div>
+            </footer>
         </div>
-        <footer>
-            <div class="foot-text">Copyleft coolrunner1 2024</div>
-        </footer>
     </body>
 </html>

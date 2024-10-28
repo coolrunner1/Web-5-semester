@@ -7,28 +7,67 @@ const photos = [ "./images/nmuax05zxoab1.gif", "./images/xxodzo30yoab1.gif", "./
 const titles = ["C", "C++", "Rust", "C#", "Java", "Go", "Python", "Javascript", "Ruby", "Kotlin", "Swift",
     "Dart", "VBA", "Pascal", "HolyC"];
 
-const galleryElements = (columns, elements) => {
-    for (let i=0; i<elements; i+=columns){
-        const gallery = document.getElementById("middle");
-        const row = document.createElement("div");
-        row.className = "my-images";
-        gallery.appendChild(row);
-        for (let j=i; j<i+columns; j++){
-            const imageBox = document.createElement("div");
-            imageBox.className = "img-intern";
-            row.appendChild(imageBox);
-            const image = document.createElement("img");
-            image.className = "image-with-border";
-            image.src = photos[j];
-            image.title = titles[j];
-            image.alt = titles[j].toLowerCase();
-            imageBox.appendChild(image);
-            const title = document.createElement("div");
-            title.className = "img-descr";
-            title.textContent = titles[j];
-            imageBox.appendChild(title);
+const galleryElements = async (columns, elements) => {
+    return new Promise((resolve, reject) => {
+        try {
+            for (let i=0; i<elements; i+=columns){
+                const gallery = $("#middle");
+                const row=$("<div class='my-images'></div>");
+                gallery.append(row)
+                for (let j=i; j<i+columns; j++){
+                    const image=$("<img class='image-with-border' title='"+titles[j]+"' src='"+photos[j]+"' alt='"+titles[j].toLowerCase()+"'>");
+                    image.on("click", () => fullscreenDisplay(image.attr("src").toString()));
+                    const imageIntern = $("<div class='img-intern'></div>")
+                    imageIntern.append(image);
+                    imageIntern.append("<div class='img-descr'>"+titles[j]+"</div>");
+                    row.append(imageIntern);
+                }
+            }
+            resolve("Gallery items have been added.")
+        } catch (error) {
+            reject(`Failed to add items to the gallery: ${error}`);
         }
-    }
+    });
+
+};
+
+const fullscreenDisplay = (image) => {
+    let currentImage = photos.indexOf(image);
+    const numberOfImages = photos.length;
+    const fullscreenImage=$('<img class="resizable-image" alt="'+titles[currentImage].toLowerCase()+'" title="'+titles[currentImage]+'">');
+    fullscreenImage.attr("src", image);
+    const fullscreenView = $("<div id='fullscreen-image-view'></div>");
+    fullscreenView.on("click", () => fullscreenView.remove());
+    fullscreenView.append(fullscreenImage);
+    const backButton = $("<button>Назад</button>");
+    backButton.on("click", () => {
+        fullscreenView.remove();
+        if(currentImage-1<0){
+            currentImage=numberOfImages;
+        }
+        fullscreenDisplay(photos[currentImage-1]);
+    });
+    const forwardButton = $("<button>Вперёд</button>");
+    forwardButton.on("click", () => {
+        fullscreenView.remove();
+        if(currentImage+1>=numberOfImages){
+            currentImage=-1;
+        }
+        fullscreenDisplay(photos[currentImage+1]);
+    });
+    const navStatus = $("<div id='fullscreen-nav-status' class='hero-secondary'>Фото "+(currentImage+1)+" из "+numberOfImages+"</div>");
+    const navigationContainer = $("<div class='fullscreen-view-navigation-container'></div>")
+    navigationContainer.append(backButton);
+    navigationContainer.append(navStatus);
+    navigationContainer.append(forwardButton);
+    fullscreenView.append(navigationContainer);
+    $("body").prepend(fullscreenView);
 }
 
-galleryElements(3, titles.length);
+(async () => {
+    await galleryElements(3, titles.length);
+})();
+
+(async () => {
+    await registerVisit("gallery");
+})();
