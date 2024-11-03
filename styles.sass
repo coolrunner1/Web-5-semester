@@ -1,0 +1,610 @@
+body
+  padding: 0
+  margin: 0
+  min-height: 100vh
+  /*display: flex;flex-direction: column;*/
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+#main-page
+  background-color: #1f2937
+
+div
+  position: relative
+  z-index: 99
+
+.content-container
+  min-height: 96vh
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+header,
+footer,
+#top,
+#middle
+  background-color: #1f2937
+  color: #f9faf8
+  display: flex
+  padding-right: 10%
+  padding-left: 10%
+  margin: 0
+  border: 0
+  position: relative
+  z-index: 99
+
+header
+  padding-top: 18px
+  padding-bottom: 18px
+  width: 80%
+  justify-content: space-between
+  position: fixed
+  z-index: 998
+
+#filler-top
+  padding-top: 18px
+  padding-bottom: 18px
+
+#top
+  justify-content: space-between
+  padding-top: 55px
+  padding-bottom: 55px
+
+#middle
+  display: flex
+  flex-direction: column
+  /*justify-content: space-between;*/
+  background-color: #f9faf8
+  height: 100%
+  position: relative
+  z-index: 99
+  padding-right: 20%
+  padding-left: 20%
+  padding-bottom: 5%
+
+#container-with-box
+  background-color: #f9faf8
+  height: auto
+  position: relative
+  z-index: 99
+  padding: 95px 10%
+
+#quote
+  display: flex
+  flex-direction: column
+  background-color: #e5e7eb
+  padding: 125px 20%
+  gap: 10px
+
+footer
+  display: flex
+  justify-content: center
+  text-align: center
+  flex-direction: column
+  padding: 1% 0
+
+.hero-header,
+li,
+lh
+  font-weight: bolder
+  font-size: 24px
+
+.hero-secondary,
+.hero-secondary-but
+  font-weight: bolder
+  font-size: 18px
+  color: #e5e7eb
+
+p
+  font-size: 20px
+
+.hero-secondary-but:visited
+  color: #e5e7eb
+  text-decoration: none
+
+.hero-secondary-but:link
+  color: #e5e7eb
+  text-decoration: none
+
+.hero-secondary-but:hover
+  color: #3882f6
+  text-decoration: none
+  transition: .5s ease
+
+button:hover
+  background-color: #005ff7
+  border-color: #005ff7
+
+.small-items
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  gap: 15px
+  padding: 5px
+  padding-left: 0
+  padding-right: 0
+
+.top-div
+  display: flex
+  flex-direction: column
+  gap: 10px
+  text-align: left
+
+.information
+  font-weight: bolder
+  font-size: 36px
+  color: #1f2937
+  text-align: center
+  padding: 45px 0
+
+.hero
+  font-size: 48px
+
+.my-images
+  display: flex
+  flex-direction: row
+
+button
+  padding: 10px 15px
+  width: 100%
+  max-width: 170px
+  color: #e5e7eb
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-weight: bolder
+  font-size: 16px
+  background-color: #3882f6
+  border-style: solid
+  border-color: #3882f6
+  border-radius: 10px
+  margin: 0
+  font-family: arial
+
+img
+  width: 45%
+  height: 45%
+
+.my-images
+  display: flex
+  flex-direction: row
+  gap: 25px
+
+.image-with-border
+  border-style: solid
+  border-color: #3882f6
+  border-radius: 10px
+  width: 100%
+  height: 80%
+
+.img-descr
+  text-align: center
+  color: #4b5563
+
+.img-intern
+  height: auto
+  width: 100%
+
+.quote-text
+  font-size: 36px
+  font-style: italic
+  text-align: right
+  color: #1f2937
+
+.quote-auth
+  text-align: right
+  font-size: 36px
+
+.content-box
+  display: flex
+  justify-content: space-between
+  border-style: solid
+  border-color: #3882f6
+  background-color: #3882f6
+  border-radius: 10px
+  color: #e5e7eb
+  padding: 50px 5%
+
+#but2,
+#but3,
+#but4,
+#yes-popup,
+#no-popup
+  border-color: #e5e7eb
+
+#survey-form,
+.pop-up
+  background-color: #3882f6
+  border-style: solid
+  border-color: #3882f6
+  border-radius: 20px
+  width: 60%
+  height: auto
+  padding: 25px
+  margin: auto
+  font-family: arial
+  font-size: 20px
+  font-style: bold
+  color: rgb(249, 243, 223)
+  margin-bottom: 40px
+
+label
+  display: flex
+  flex-direction: row
+  justify-content: right
+  gap: 50px
+  margin: 10px
+  margin-bottom: 0
+  text-align: center
+
+#text-container + label
+  margin-bottom: 20px
+
+input,
+select,
+textarea,
+.error-message,
+.pop-up-tip
+  display: block
+  padding: 15px
+  width: 60%
+  background-color: #ffffff90
+  border-style: solid
+  border-radius: 10px
+  font-family: arial
+  font-size: 15px
+
+.valid-input
+  border-color: green
+  color: green
+
+.invalid-input
+  border-color: red
+  color: red
+
+textarea
+  min-height: 100px
+  height: 20vh
+
+label + button
+  display: block
+  padding: 15px
+  width: 50%
+  margin: auto
+
+.check
+  text-align: center
+  font-size: 15px
+  border-radius: 5px
+  gap: 0
+
+.radios, .checkboxes
+  display: inline
+  margin: auto 10px
+  width: auto
+
+.label-text
+  padding: 10px
+
+#myboxes
+  display: flex
+  flex-direction: row
+  justify-content: center
+  gap: 40px
+  margin-right: 28%
+  margin-top: 20px
+
+.bottom-buttons
+  display: flex
+  justify-content: center
+  gap: 20px
+
+.secondary-contact-text
+  font-weight: bolder
+  font-size: 26px
+  color: #1f2937
+  text-align: center
+  padding-bottom: 50px
+
+.test, #myboxes.test
+  display: flex
+  flex-direction: column
+  gap: 0
+
+.test > input
+  width: 95%
+  margin-right: 30px
+
+#dropdown,
+#dropdown2
+  width: 98%
+  margin-right: 30px
+
+#dropdown2
+  margin-bottom: 20px
+
+table,
+tr,
+th,
+td
+  padding: 15px
+  background-color: #ffffff90
+  border-style: solid
+  border-collapse: collapse
+  font-family: arial
+  font-size: 15px
+  margin: 10px
+
+.myinterests-content
+  padding: 20px
+  height: 100%
+
+.interests-image
+  width: 550px
+  height: 350px
+
+.black-but:link
+  color: black
+
+.black-but:visited
+  color: #1f2937
+
+.black-but:hover
+  color: #3882f6
+  text-decoration: none
+
+.interest-content
+  display: flex
+  flex-direction: row
+  gap: 20px
+  text-align: justify
+  justify-content: space-between
+
+.interest-reverse
+  flex-direction: row-reverse
+
+#result
+  text-align: center
+
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+  transition: .5s ease
+  background-color: #1f2937
+
+.nav-but-container
+  height: 100%
+
+/* 1-Nesting */
+.nav-but-container:hover
+  .overlay
+    opacity: 1
+
+.input-container
+  height: 100%
+
+.input-container > label
+  margin-top: 0
+
+/* 1-Nesting */
+.input-container:hover
+  .overlay
+    opacity: 1
+
+.nav-but-image
+  height: 100px
+  width: 200px
+
+.but-interest
+  height: 200px
+
+.interests-dropdown
+  flex-direction: column
+  padding: 10px
+  gap: 5px
+  width: 200px
+
+.interests-item-svg
+  background-image: url("./svgs/right-arrow-svgrepo-com.svg")
+  background-repeat: no-repeat
+  background-size: cover
+  height: 18px
+  width: 18px
+
+.interests-dropdown-item
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.interests-dropdown-item > a:hover
+  color: #1f2937
+
+#aboutme-preview
+  width: 100px
+  height: 150px
+
+#studies-preview
+  width: 150px
+  height: 110px
+
+#gallery-preview
+  width: 110px
+  height: 120px
+
+#contact-preview
+  width: 130px
+  height: 100px
+
+#test-preview
+  width: 130px
+  height: 100px
+
+.overlay-error
+  background: none
+  margin-left: 76%
+  max-width: 350px
+
+.error-message
+  border-color: red
+  background-color: #e5e7eb
+  max-width: 350px
+  padding: 10px
+  margin-left: 14vw
+  color: red
+  opacity: 1
+
+#fullscreen-image-view,
+#fullscreen-overlay
+  width: 100vw
+  height: 100vh
+  background-color: #000000A0
+  position: fixed
+  z-index: 999
+  backdrop-filter: blur(5px)
+  /*opacity: 0.6;*/
+  display: flex
+  flex-direction: column
+  align-items: center
+
+#fullscreen-overlay
+  justify-content: center
+
+.fullscreen-view-navigation-container
+  display: flex
+  flex-direction: row
+  gap: 10px
+  min-width: 600px
+  margin-bottom: 5%
+  justify-content: center
+
+#fullscreen-nav-status
+  margin: 10px
+
+@keyframes fadeInAnimation
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+.resizable-image
+  display: block
+  margin: auto
+  animation: fadeInAnimation ease .5s
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+
+#fullscreen-image-view > img
+  width: 30vw
+  height: auto
+
+/* 1-Nesting */
+#fullscreen-image-view
+  img
+    object-fit: cover
+
+#history-container
+  display: flex
+  flex-direction: row
+  padding: 50px
+  justify-content: center
+  gap: 20px
+
+#history-container > div > button
+  max-width: 400px
+
+#calendar
+  padding: 10px
+  display: flex
+  flex-direction: column
+  border: 2px solid #e5e7eb
+  border-radius: 20px
+  background-color: #a8c9fb
+  max-width: 350px
+  gap: 20px
+  color: black
+
+#calendar-header
+  display: flex
+  flex-direction: row
+  gap: 5px
+  justify-content: center
+
+#calendar-header > select
+  max-width: 150px
+  padding: 5px
+
+#calendar-days-container
+  display: flex
+  flex-direction: column
+  gap: 10px
+  justify-content: center
+
+.calendar-week
+  display: flex
+  flex-direction: row
+  gap: 10px
+  justify-content: center
+
+.calendar-week > button
+  width: 30px
+  height: 30px
+  padding: 1px
+
+.calendar-week-header
+  gap: 19px
+  font-size: 18px
+
+.day-null,
+.day-null:hover
+  border-color: #a8c9fb
+  background-color: #a8c9fb
+
+#calendar-container
+  display: flex
+  flex-direction: row-reverse
+  margin: 10px
+
+.date-input-changed
+  color: black
+
+.pop-up
+  position: absolute
+  z-index: 1000
+  display: flex
+  flex-direction: column
+  min-height: 30%
+  justify-content: center
+  align-items: center
+  gap: 5vh
+  max-width: 30%
+
+.pop-up > div > button
+  min-width: 80px
+
+.input-container-test > input
+  width: 100%
+
+.input-container-test
+  margin-right: 3vw
+  margin-bottom: auto
+
+.pop-up-tip
+  color: black
+  font-weight: bold
+  border-color: #ffffff
+  margin-left: 22vw
+  max-width: 35vw
+  margin-right: 30px
+  position: absolute
+  z-index: 1000
+  margin-top: 0
+  padding-top: 1px
+  padding-bottom: 1px
+  border-width: 2px
+
+.input-filler-top
+  padding: 15px 0
