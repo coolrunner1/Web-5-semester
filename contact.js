@@ -8,9 +8,6 @@ $.fn.isInViewport = function () {
     const viewportTop = $(window).scrollTop();
     const viewportBottom = viewportTop + $(window).height();
 
-    console.log(viewportTop, viewportBottom);
-    console.log(elementTop, elementBottom);
-
     return elementBottom > viewportTop && elementBottom < viewportBottom;
 };
 
