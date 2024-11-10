@@ -8,80 +8,69 @@
         <title>Моя страница</title>
         <script src="jquery-3.7.1.min.js"></script>
         <script src="script.js" defer></script>
-        <script src="mainpage.js" defer></script>
+        <script src="forms.js" defer></script>
+        <script src="contact.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
         <link rel="icon" sizes="any" type="image/svg+xml" href="./images/home-2741413_960_720.png">
     </head>
-    <body id="main-page">
-        <header>
-            <div class="hero-header">Моя страница</div>
-            <div class="small-items">
-                <div class="nav-but-container">
-                    <a href="index.html" class="hero-secondary-but" title="Main-page">Главная страница</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="aboutme.html" class="hero-secondary-but" title="About">Обо мне</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="myinterests.html" class="hero-secondary-but" title="Interests">Мои интересы</a>
-                    <div class="overlay">
-                        <a href="myinterests.html" class="hero-secondary-but" title="Interests">Мои интересы</a>
-                        <div class="content-box interests-dropdown">
-                            <div class="interests-dropdown-item">
-                                <a href="myinterests.html#int1" class="hero-secondary-but">Игры</a>
-                                <div class="interests-item-svg"></div>
-                            </div>
-                            <div class="interests-dropdown-item">
-                                <a href="myinterests.html#int2" class="hero-secondary-but">Английский язык</a>
-                                <div class="interests-item-svg"></div>
-                            </div>
-                            <div class="interests-dropdown-item">
-                                <a href="myinterests.html#int3" class="hero-secondary-but">Книги</a>
-                                <div class="interests-item-svg"></div>
-                            </div>
-                            <div class="interests-dropdown-item">
-                                <a href="myinterests.html#int4" class="hero-secondary-but">Фильмы</a>
-                                <div class="interests-item-svg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-but-container">
-                    <a href="studies.html" class="hero-secondary-but" title="Studies">Учёба</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="gallery.html" class="hero-secondary-but" title="Gallery">Фотоальбом</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="contact.html" class="hero-secondary-but" title="Contacts">Контакт</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="test.html" class="hero-secondary-but" title="Test">Тест</a>
-                </div>
-                <div class="nav-but-container">
-                    <a href="history.html" class="hero-secondary-but" title="View history">История</a>
-                </div>
-            </div>
-        </header>
-        <div id="filler-top"></div>
+    <body id="contact">
         <div class="content-container">
-            <div id="top">
-                <div class="top-div">
-                    <div class="hero">Меня зовут Козловцев Игорь</div>
-                    <div class="hero-secondary">Я студент группы ИС/б-22-1-о</div>
-                    <div class="hero-secondary">ЛАБОРАТОРНАЯ РАБОТА №5 - Исследование возможностей ускорения разработки клиентских приложений с использованием SASS</div>
-                </div>
-                <img src="./images/a-modern-front-end-workflow-03_01.png" title="SASS" alt="sass" width="640" height="480">
+          <div class="information">Обратная связь</div>
+          <div class="secondary-contact-text">Если у вас есть пожелания по улучшению этого сайта, заполните данную форму</div>
+          <form id="survey-form" action="mailto:youraddr@domain.com?subject=dsifisdf" method="GET">
+              <div class="input-container" id="name-container">
+                  <label id="name-label" for="name"><span class="label-text">Фамилия Имя Отчество</span><input id="name" type="text" placeholder="Введите своё имя" required /></label>
+              </div>
+              <div class="input-container" id="email-container">
+                <label id="email-label"  for="email"><span class="label-text">Электронная почта</span><input id="email" type="email" placeholder="Введите свою почту" required /></label>
+              </div>
+              <div class="input-container" id="number-container">
+                <label id="number-label"  for="number"><span class="label-text">Телефон</span><input id="number" type="text" placeholder="Введите свой номер телефона" required /></label>
+              </div>
+              <div class="input-container" id="age-container">
+                <label id="age-label"  for="age"><span class="label-text">Возраст</span><input id="age" type="number" min=0 max=150 placeholder="Введите свой возраст" required /></label>
+              </div>
+             <div id="myboxes">
+              <label>Пол</label>
+              <div>
+                <label class="check"><input type="radio" name="conditions"  class="radios" value="male"/> Мужской</label>
+                <label class="check"><input type="radio" class="radios" name="conditions" value="female"/> Женский</label>
+              </div>
             </div>
-            <div id="container-with-box">
-                <div class="content-box">
-                    <div>
-                        <div class="hero-header">Есть предложения по улучшению сайта?</div>
-                        <div class="hero-secondary">Заполните данную форму!</div>
-                    </div>
-                    <button id="but2">Заполнить</button>
-                </div>
+            <div class="input-container" id="date-container">
+                <label id="date-label"  for="date"><span class="label-text">Дата рождения</span><input id="date" type="date" required/></label>
             </div>
+              <label id="dropdown2-label" for="dropdown2"><span class="label-text">Из чего состоит квадрат?</span><select id="dropdown2">
+                  <optgroup label="Линии">
+                      <option>Прямые линии</option>
+                      <option>Прерывистые линии</option>
+                      <option>Пунктирные линии</option>
+                  </optgroup>
+                  <optgroup label="Кривые">
+                      <option>Прямые кривые</option>
+                      <option>Прерывистые кривые</option>
+                      <option>Пунктирные кривые</option>
+                  </optgroup>
+                  <optgroup label="Ломаные">
+                      <option>Прямые ломаные</option>
+                      <option>Прерывистые ломаные</option>
+                      <option>Пунктирные ломаные</option>
+                  </optgroup>
+              </select></label>
+
+            <div class="input-container" id="text-container">
+                <label id="topic-label" for="text"><span class="label-text">Тема</span><input name="subject" id="text" type="text" placeholder="Введите тему письма" required /></label>
+            </div>
+            <label>
+              <span class="label-text">Пожелания</span>
+              <textarea name="body"></textarea>
+            </label>
+            <div class="bottom-buttons">
+              <button id="but4" type="button">Проверить</button>
+              <button id="but2" type="button">Отправить</button>
+              <button id="but3" type="button">Очистить</button>
+            </div>
+          </form>
             <footer>
                 <div class="foot-text">Copyleft coolrunner1 2024</div>
             </footer>
