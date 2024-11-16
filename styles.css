@@ -339,23 +339,11 @@ label + button {
   background-color: #1f2937;
 }
 
-.nav-but-container {
-  height: 100%;
-}
-
-/* 1-Nesting */
-.nav-but-container:hover .overlay {
-  opacity: 1;
-}
-
 .input-container {
   height: 100%;
-}
-.input-container label {
-  margin-top: 0;
+  margin: 25px auto;
 }
 
-/* 1-Nesting */
 .input-container:hover .overlay {
   opacity: 1;
 }
@@ -418,7 +406,6 @@ label + button {
   animation-fill-mode: forwards;
 }
 
-/* 1-Nesting */
 #fullscreen-image-view img {
   width: 30vw;
   height: auto;
@@ -473,5 +460,3 @@ label + button {
 #dropdown2-label {
   margin-top: 20px;
 }
-
-/*# sourceMappingURL=styles.css.map */
