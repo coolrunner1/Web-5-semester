@@ -1,4 +1,5 @@
 <template>
+  <div id="filler-top"></div>
   <div>
     <div id='fullscreen-overlay' v-if="sendPopup">
       <div class='pop-up'>
