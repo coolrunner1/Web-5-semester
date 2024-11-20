@@ -3,7 +3,6 @@
 </script>
 
 <template>
-  <div id="filler-top"></div>
   <div class="content-container">
     <div class="information">Тест по дисциплине "Инженерная графика"</div>
     <form id="survey-form" action="mailto:youraddr@domain.com?subject=dsifisdf" method="GET">

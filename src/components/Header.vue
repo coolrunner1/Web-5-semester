@@ -15,6 +15,7 @@
       <div><a href="test.html" class="hero-secondary-but" title="Test">Тест</a></div>
     </div>
   </header>
+  <div id="filler-top"></div>
 </template>
 
 <style scoped>

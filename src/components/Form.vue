@@ -1,5 +1,4 @@
 <template>
-  <div id="filler-top"></div>
   <div>
     <div id='fullscreen-overlay' v-if="sendPopup">
       <div class='pop-up'>
@@ -72,25 +71,6 @@
           <input id="date" type="date" :class="{ 'invalid-input': invalid['date'], 'valid-input': valid['date'], }" v-model="formData.date" required/>
         </label>
       </div>
-      <label id="dropdown2-label" for="dropdown2">
-        <span class="label-text">Из чего состоит квадрат?</span>
-        <select id="dropdown2"  :class="{ 'invalid-input': invalid['question'], 'valid-input': valid['question'], }" v-model="formData.question">
-        <optgroup label="Линии">
-          <option>Прямые линии</option>
-          <option>Прерывистые линии</option>
-          <option>Пунктирные линии</option>
-        </optgroup>
-        <optgroup label="Кривые">
-          <option>Прямые кривые</option>
-          <option>Прерывистые кривые</option>
-          <option>Пунктирные кривые</option>
-        </optgroup>
-        <optgroup label="Ломаные">
-          <option>Прямые ломаные</option>
-          <option>Прерывистые ломаные</option>
-          <option>Пунктирные ломаные</option>
-        </optgroup>
-      </select></label>
 
       <div class="input-container" id="text-container">
         <label id="topic-label" for="text">
@@ -219,14 +199,6 @@ export default {
       this.setValid('phone');
       return true;
     },
-    validateTest() {
-      if (this.formData.question!=="Прямые линии"){
-        this.setInvalid('question');
-        return false;
-      }
-      this.setValid('question');
-      return true;
-    },
     validateAge(){
       if (this.formData.age<=0 || this.formData.age>150){
         this.setInvalid('age');
@@ -266,7 +238,6 @@ export default {
         this.validateEmail();
         this.validateNumber();
         this.validateAge();
-        this.validateTest();
       }
     },
     removeOverlay() {
