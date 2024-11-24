@@ -1,16 +1,15 @@
 <script>
+import {useStore} from "vuex";
+import store from "@/assets/store/index.js";
+
 export default {
-  data() {
-    return {
-      count: 0
+  computed: {
+    store() {
+      return store
     }
   },
-  methods: {
-    increment() {
-      this.count++
-    }
-  }
 }
+
 </script>
 
 <template>
@@ -29,7 +28,7 @@ export default {
           <div class="hero-header">Хотите увеличить количество нажатий?</div>
           <div class="hero-secondary">Нажмите на эту кнопку!</div>
         </div>
-        <button id="but2" v-on:click="increment">Количество нажатий: {{count}}</button>
+        <button id="but2" @click="store.commit('increment')">Количество нажатий: {{store.state.count}}</button>
       </div>
     </div>
   </div>
