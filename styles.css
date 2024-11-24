@@ -81,7 +81,7 @@ header {
 }
 
 #container-with-box {
-  background-color: #f9faf8;
+  /*background-color: #f9faf8;*/
   height: auto;
   position: relative;
   z-index: 99;
