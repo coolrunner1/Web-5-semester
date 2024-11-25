@@ -1,1 +1,1 @@
-Создать приложение, которое будет содержать несколько страниц с произвольным наполнением, навигацию с помощью vue-router, а также продемонстрируйте работу vuex в вашем приложении.
+Solutions to the lab assignments for the subject "Web Development" at my university.
