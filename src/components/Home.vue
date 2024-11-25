@@ -20,7 +20,7 @@ export default {
         <div class="hero-secondary">Я студент группы ИС/б-22-1-о</div>
         <div class="hero-secondary">ЛАБОРАТОРНАЯ РАБОТА №7 - Vue.js – маршрутизация и управление состоянием</div>
       </div>
-      <img src="../assets/images/vue-blog-cover-2.pngs" title="Vue" alt="vue" width="640" height="480">
+      <img src="../assets/images/vue-blog-cover-2.png" title="Vue" alt="vue" width="640" height="480">
     </div>
     <div id="container-with-box">
       <div class="content-box">
