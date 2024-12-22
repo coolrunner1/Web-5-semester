@@ -1,4 +1,4 @@
-if (screen.width < 1282){
+if (screen.width < 1280 && !sessionStorage.getItem("main-page")){
     alert("Your screen is not supported! Website might not work as intended!")
 }
 
